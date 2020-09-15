@@ -1,0 +1,100 @@
+%% Definitions for Learning from Data
+%% UPDATE: October 8, 2018 by Xiangxiang 
+\newcommand{\theterm}{Fall 2018}
+
+\newcommand{\thecoursename}{
+Tsinghua-Berkeley Shenzhen Institute\\
+%\vspace*{0.1in}
+\textsc{Learning from Data}
+}
+
+\newcommand{\courseheader}{
+\vspace*{-1in}
+\begin{center}
+\thecoursename \\
+\theterm
+\vspace*{0.1in}
+\hrule
+\end{center}
+}
+\newcommand{\uc}{\underline{c}}    % c, vec
+\newcommand{\uv}{\underline{v}}    % x, vec
+\newcommand{\uw}{\underline{w}}    % w, vec
+\newcommand{\ux}{\underline{x}}    % x, vec
+\newcommand{\uy}{\underline{y}}    % y, vec
+\newcommand{\uz}{\underline{z}}    % z, vec
+\newcommand{\um}{\underline{m}}    % m, vec
+\newcommand{\ut}{\underline{t}}    % t, vec
+
+\newcommand{\bA}{\bm{A}}    % A, mat
+\newcommand{\bn}{\bm{n}}    % n, mat
+
+\newcommand{\bc}{\bm{c}}    % c, vec
+\newcommand{\bv}{\bm{v}}    % x, vec
+\newcommand{\bw}{\bm{w}}    % w, vec
+\newcommand{\bT}{\bm{T}}    % T, mat
+
+\newcommand{\bx}{\bm{x}}    % x, vec
+\newcommand{\bX}{\bm{X}}    % X, mat
+\newcommand{\by}{\bm{y}}    % y, vec
+\newcommand{\rvby}{\bm{\mathsf{y}}}    % y, rv. vec
+\newcommand{\rvbx}{\bm{\mathsf{x}}}    % x, rv. vec
+\newcommand{\bz}{\bm{z}}    % z, vec
+% \newcommand{\bm}{\bm{m}}    % m, vec
+\newcommand{\bt}{\bm{t}}    % t, vec
+\newcommand{\bzero}{\bm{0}}    % 0, vec
+
+\newcommand{\balpha}{\bm{\alpha}}    % alpha, vec
+\newcommand{\bxi}{\bm{\xi}}    % xi, vec
+\newcommand{\btheta}{\bm{\theta}}    % theta, vec
+\newcommand{\bmu}{\bm{\mu}}    % mu, vec
+
+\newcommand{\bSigma}{\bm{\Sigma}}    % Sigma, vec
+
+\newcommand{\cL}{\mathcal{L}}  
+\newcommand{\cX}{\mathcal{X}}  
+
+
+\newcommand{\rvx}{\mathsf{x}}    % x, r.v.
+\newcommand{\rvy}{\mathsf{y}}    % y, r.v.
+\newcommand{\rvz}{\mathsf{z}}    % z, r.v.
+\newcommand{\rvw}{\mathsf{w}}    % w, r.v.
+\newcommand{\rvv}{\mathsf{v}}    % v, r.v.
+\newcommand{\rvm}{\mathsf{m}}    % m, r.v.
+\newcommand{\rvt}{\mathsf{t}}    % t, r.v.
+\newcommand{\rvH}{\mathsf{H}}    % H, r.v.
+\newcommand{\urvx}{\underline{\mathsf{x}}}    % x, r.v. vec
+\newcommand{\urvy}{\underline{\mathsf{y}}}    % y, r.v. vec
+\newcommand{\urvz}{\underline{\mathsf{z}}}    % z, r.v. vec
+\newcommand{\urvw}{\underline{\mathsf{w}}}    % w, r.v. vec
+\newcommand{\urvt}{\underline{\mathsf{t}}}    % t, r.v. vec
+\newcommand{\defeq}{\triangleq} %\coloneqq
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\T}{\mathrm{T}}    % transpose
+\newcommand{\F}{\mathrm{F}}    % Frobenius
+\newcommand{\BLS}{\mathrm{BLS}}    % BLS
+\newcommand{\LLS}{\mathrm{LLS}}    % LLS
+\newcommand{\MVU}{\mathrm{MVU}}    % MVU
+
+\DeclareMathOperator*{\maximize}{maximize}    % maximize
+\DeclareMathOperator*{\minimize}{minimize}    % minimize
+\newcommand{\st}{\mathrm{subject~to}}    % minimize
+
+
+% \newcommand{\E}[1]{\mathbb{E}\left[{#1}\right]}
+% \newcommand{\Prob}[1]{\mathbb{P}\left({#1}\right)}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argsup}{arg\,sup}
+\DeclareMathOperator*{\arginf}{arg\,inf}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\Cov}{Cov}
+\DeclareMathOperator{\MSE}{MSE}
+\DeclareMathOperator{\1}{\mathds{1}}
+\DeclareMathOperator{\E}{\mathbb{E}}
+\DeclareMathOperator{\Prob}{\mathbb{P}}
+\DeclareMathOperator{\im}{im}
+% \DeclareMathOperator{\ker}{ker}
+
+\newcommand\independent{\protect\mathpalette{\protect\independenT}{\perp}}
+\def\independenT#1#2{\mathrel{\rlap{$#1#2$}\mkern2mu{#1#2}}}
