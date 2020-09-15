@@ -1,8 +1,8 @@
-PWD /Users/chm/Downloads/信息论与统计学习/HW1
+PWD /Users/chm/Downloads/信息论与统计学习/HW/HW1
 INPUT /usr/local/texlive/2018/texmf.cnf
 INPUT /usr/local/texlive/2018/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2018/texmf-var/web2c/xetex/xelatex.fmt
-INPUT /Users/chm/Downloads/信息论与统计学习/HW1/ithw.tex
+INPUT /Users/chm/Downloads/信息论与统计学习/HW/HW1/ithw.tex
 OUTPUT ithw.log
 INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/base/article.cls

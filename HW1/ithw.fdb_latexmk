@@ -1,11 +1,10 @@
 # Fdb version 3
-["xdvipdfmx"] 1600162689 "ithw.xdv" "ithw.pdf" "ithw" 1600162754
-  "ithw.xdv" 1600162689 23088 c4e1cc79af680a6018a444bc87c5dbc1 "xelatex"
+["xdvipdfmx"] 1600175450 "ithw.xdv" "ithw.pdf" "ithw" 1600175451
+  "ithw.xdv" 1600175450 23348 18cf397d484f2b415f146443b0120a95 "xelatex"
   (generated)
   "ithw.pdf"
-["xelatex"] 1600162688 "/Users/chm/Downloads/信息论与统计学习/HW/HW1/ithw.tex" "ithw.xdv" "ithw" 1600162754
-  "/Users/chm/Downloads/信息论与统计学习/HW/HW1/ithw.tex" 1600162752 4967 dcdf69a128b64bf05caa111960210ee2 ""
-  "/Users/chm/Downloads/信息论与统计学习/HW1/ithw.tex" 1600162687 4967 dcdf69a128b64bf05caa111960210ee2 ""
+["xelatex"] 1600175450 "/Users/chm/Downloads/信息论与统计学习/HW/HW1/ithw.tex" "ithw.xdv" "ithw" 1600175451
+  "/Users/chm/Downloads/信息论与统计学习/HW/HW1/ithw.tex" 1600175449 5196 0421efe7dd5aeddcb4982c3e3a6d2b69 ""
   "/usr/local/texlive/2018/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/local/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm" 1480098698 1120 1e8878807317373affa7f7bba4cf2f6a ""
   "/usr/local/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy7.tfm" 1480098698 1120 7f9f170e8aa57527ad6c49feafd45d54 ""
@@ -103,8 +102,8 @@
   "/usr/local/texlive/2018/texmf-var/web2c/xetex/xelatex.fmt" 1553378829 3737826 3c9ee2198fc3e18a713a1b12e057fce6 ""
   "/usr/local/texlive/2018/texmf.cnf" 1523934483 577 0b39adfd7c93507ff20c9c14c2f1a33f ""
   "itdef.tex" 1600094570 4501 7af1341a22ddc14e210d76bab50da7b3 ""
-  "ithw.aux" 1600162689 633 ff39dd88310b2e023b72424ffba38b49 ""
-  "ithw.tex" 1600162752 4967 dcdf69a128b64bf05caa111960210ee2 ""
+  "ithw.aux" 1600175450 633 2296a0081609e3f885149d3c96dbbac1 ""
+  "ithw.tex" 1600175449 5196 0421efe7dd5aeddcb4982c3e3a6d2b69 ""
   "matlabscript.m" 1539002720 666 494051d98cbf540854c2d1d112f2a2d7 ""
   "pdf_normal.eps" 1539002720 46951 2e1b1bca4f0eb5e18d0b0643bb495e80 ""
   (generated)
