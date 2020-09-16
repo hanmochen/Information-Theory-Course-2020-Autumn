@@ -52,6 +52,7 @@
 \rule{\textwidth}{1pt}
 \begin{itemize}
 \item {\bf Acknowledgments: \/} 
+  \textcolor{gray}{None}
   % \textcolor{gray}{This template takes some materials from course CSE 547/Stat 548 of Washington University: \small{\url{https://courses.cs.washington.edu/courses/cse547/17sp/index.html}}.}
 
   % \textcolor{red}{If you refer to other materials in your homework, please list here.}
@@ -83,6 +84,71 @@
     \begin{enumerate}
       \item \begin{enumerate}
         \item $\mathbb{E}[x| y]=\mathbb{E}[\mathbb{E}[x | yz] |y]$
+        \\~ 
+        
+        Proof: 
+        \begin{equation}
+          \begin{aligned}
+            \mathbb{E} [x|yz] = \sum_{x} xP_{X|YZ}(x|yz)
+          \end{aligned}
+        \end{equation}
+
+        Denote $ \mathbb{E} [x|yz]$ as $g(y,z)$
+        \begin{equation}
+          \begin{aligned}
+            E[g(y,z) | y] &= \sum_{z} g(y,z) P_{Z|Y}(z|y) \\
+            & = \sum_{z} \left(\sum_{x} xP_{X|YZ}(x|yz)\right)P_{Z|Y}(z|y) \\
+            & = \sum_{x,z} xf_{X|YZ}(x|yz) P_{Z|Y}(z|y) \\
+            & = \sum_{x,z} x P_{X,Z|Y}(x,z|y) \\
+            & = \sum_{x} x P_{X|Y}(x|y) \\ 
+            & = \mathbb{E}[x| y]
+          \end{aligned}
+        \end{equation}
+
+        So we have $\mathbb{E}[x| y]=\mathbb{E}[\mathbb{E}[x | yz] |y]$
+
+      \item $\mathbb{E}[xg(y) |y] = g(y)\mathbb{E}[x| y]$
+      \\~
+
+      Proof:
+
+      \begin{equation}\label{eq3}
+        \begin{aligned}
+          \mathbb{E}[xg(y) |y]& = \sum_{x} xg(y) P_{X|Y}(x|y) \\
+          & = g(y)\sum_{x} x P_{X|Y}(x|y) \quad (g(y) \text{ is constant with } y \text{ fixed)}\\
+          & = g(y) \mathbb{E} [x|y]
+        \end{aligned}
+      \end{equation}
+
+      \item  $\mathbb{E}[x\mathbb{E}[x|y]]=\mathbb{E}\left[(\mathbb{E}[x | y])^{2}\right]$
+      \\~
+
+      Proof:
+
+      Denote $\mathbb{E}[x|y]$ as $g(y)$, using the conclusion from Equation [\ref{eq3}], considering the following expression $\mathbb{E}[xg(y)|y]$
+
+      \begin{equation}
+        \begin{aligned}
+          \mathbb{E}[xg(y)|y ] =  g(y) \mathbb{E}[x|y] = (\mathbb{E}[x|y])^2
+        \end{aligned}
+      \end{equation}
+
+      Considering the expectation of each side in the above equation,
+
+      \begin{equation}
+        \begin{aligned}
+          \mathbb{E}[\mathbb{E}[xg(y)|y ] ] & = \mathbb{E}[xg(y)] \quad \text{(Total Expectation Rule)}  \\
+          & = \mathbb{E}[x\mathbb{E}(x|y)] \\
+          & = \mathbb{E}[{(\mathbb{E}[x|y])^2}]
+        \end{aligned}
+      \end{equation}
+
+    \item 
+
+    
+
+
+
 
       \end{enumerate}
     \end{enumerate}
@@ -92,63 +158,63 @@
 %     \end{enumerate}
 %   \item You may need aligned equations for your homework, here are several examples:
     
-    Total probability rule:
-  \begin{equation*}
-    \begin{aligned}
-      \Prob(X = x)
-      &= \sum_{y \in \mathcal{Y}} \Prob(X = x, Y = y)\\
-      &= \sum_{y \in \mathcal{Y}} \Prob(X = x| Y = y) \Prob(Y = y),\\
-    \end{aligned}
-  \end{equation*}
-  or
-  \begin{equation*}
-    \begin{aligned}
-      P_{X}(x)
-      &= \sum_{y \in \mathcal{Y}} P_{XY}(x,y)\\
-      &= \sum_{y \in \mathcal{Y}} P_{X|Y}(x|y)P_{Y}(y).\\
-    \end{aligned}
-  \end{equation*}
-  Indicator function:
-  \begin{equation*}
-    \1_A(\omega)=
-    \left\{
-    \begin{aligned}
-      1, &\quad\text{if}~ \omega \in A,\\
-      0, &\quad\text{if}~ \omega \notin A.
-    \end{aligned}
-    \right.
-  \end{equation*}
+  %   Total probability rule:
+  % \begin{equation*}
+  %   \begin{aligned}
+  %     \Prob(X = x)
+  %     &= \sum_{y \in \mathcal{Y}} \Prob(X = x, Y = y)\\
+  %     &= \sum_{y \in \mathcal{Y}} \Prob(X = x| Y = y) \Prob(Y = y),\\
+  %   \end{aligned}
+  % \end{equation*}
+  % or
+  % \begin{equation*}
+  %   \begin{aligned}
+  %     P_{X}(x)
+  %     &= \sum_{y \in \mathcal{Y}} P_{XY}(x,y)\\
+  %     &= \sum_{y \in \mathcal{Y}} P_{X|Y}(x|y)P_{Y}(y).\\
+  %   \end{aligned}
+  % \end{equation*}
+  % Indicator function:
+  % \begin{equation*}
+  %   \1_A(\omega)=
+  %   \left\{
+  %   \begin{aligned}
+  %     1, &\quad\text{if}~ \omega \in A,\\
+  %     0, &\quad\text{if}~ \omega \notin A.
+  %   \end{aligned}
+  %   \right.
+  % \end{equation*}
 
-  \item You may need to add figures and source codes in your homework. Figure \ref{fig:1} is an example that compares the empirical distribution (histogram) and probability density function of a Gaussian random variable.
-    \begin{figure}[htbp]
-      \centering
-      \includegraphics[width = 0.8\textwidth]{pdf_normal.eps}
-      \caption{Gaussian PDF and histogram of samples}
-      \label{fig:1}
-    \end{figure}
+%   \item You may need to add figures and source codes in your homework. Figure \ref{fig:1} is an example that compares the empirical distribution (histogram) and probability density function of a Gaussian random variable.
+%     \begin{figure}[htbp]
+%       \centering
+%       \includegraphics[width = 0.8\textwidth]{pdf_normal.eps}
+%       \caption{Gaussian PDF and histogram of samples}
+%       \label{fig:1}
+%     \end{figure}
 
-  The source code to plot Figure \ref{fig:1} could be found in Appendix \ref{sec:a:code}. Here are the core codes:
-  \lstinputlisting[firstline=4,lastline=4, firstnumber=4]{matlabscript.m}
-  \lstinputlisting[firstline=6,lastline=7, firstnumber=6]{matlabscript.m}
-  To understand line 6, note that if we have $n$ samples of $X$ denoted by $x^{(i)}, i = 1, 2, \cdots, n$, then the probability density function $p_{X}$ can be estimated as
-  \begin{equation*}
-    \begin{aligned}
-      p_{X}(x_0) &= \left.\frac{\mathrm{d}}{\mathrm{d}x} \Prob(X \leq x) \right|_{x = x_0} \\
-      &\approx \frac{\Prob(x_0 - \Delta x < X \leq x_0)}{\Delta x}\\
-      &\approx \frac{1}{n\Delta x} \sum_{i = 1}^n \1_{x^{(i)} \in (x_0 - \Delta x, x_0]}.
-    \end{aligned}    
-  \end{equation*}
+%   The source code to plot Figure \ref{fig:1} could be found in Appendix \ref{sec:a:code}. Here are the core codes:
+%   \lstinputlisting[firstline=4,lastline=4, firstnumber=4]{matlabscript.m}
+%   \lstinputlisting[firstline=6,lastline=7, firstnumber=6]{matlabscript.m}
+%   To understand line 6, note that if we have $n$ samples of $X$ denoted by $x^{(i)}, i = 1, 2, \cdots, n$, then the probability density function $p_{X}$ can be estimated as
+%   \begin{equation*}
+%     \begin{aligned}
+%       p_{X}(x_0) &= \left.\frac{\mathrm{d}}{\mathrm{d}x} \Prob(X \leq x) \right|_{x = x_0} \\
+%       &\approx \frac{\Prob(x_0 - \Delta x < X \leq x_0)}{\Delta x}\\
+%       &\approx \frac{1}{n\Delta x} \sum_{i = 1}^n \1_{x^{(i)} \in (x_0 - \Delta x, x_0]}.
+%     \end{aligned}    
+%   \end{equation*}
     
 \end{enumerate}
   
-  \newpage
+%   \newpage
   
-  \appendix
-  \section{Source code}
-  \label{sec:a:code}
-  % \lstlistoflistings
-  The source code for plotting Figure \ref{fig:1} is shown as follows.
-  \lstinputlisting{matlabscript.m}
+%   \appendix
+%   \section{Source code}
+%   \label{sec:a:code}
+%   % \lstlistoflistings
+%   The source code for plotting Figure \ref{fig:1} is shown as follows.
+%   \lstinputlisting{matlabscript.m}
   
 \end{document}
 %%% Local Variables:

@@ -1,10 +1,10 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.3.23)  15 SEP 2020 21:10
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.3.23)  16 SEP 2020 14:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/chm/Downloads/信息论与统计学习/HW/HW1/ithw.tex
-(/Users/chm/Downloads/信息论与统计学习/HW/HW1/ithw.tex
+**ithw
+(./ithw.tex
 LaTeX2e <2018-12-01>
 (/usr/local/texlive/2018/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2018/09/03 v1.4i Standard LaTeX document class
@@ -426,39 +426,20 @@ LaTeX Font Info:    Try loading font information for TS1+lmr on input line 54.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for U+eus on input line 99.
- (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/ueus.fd
-File: ueus.fd 2013/01/14 v3.01 Euler Script
-)
-LaTeX Font Info:    Try loading font information for U+dsrom on input line 113.
- (/usr/local/texlive/2018/texmf-dist/tex/latex/doublestroke/Udsrom.fd
-File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
-)
-File: pdf_normal.eps Graphic file (type eps)
-<pdf_normal.eps>
-LaTeX Font Info:    Try loading font information for T1+fvm on input line 131.
- (/usr/local/texlive/2018/texmf-dist/tex/latex/bera/t1fvm.fd
-File: t1fvm.fd 2004/09/07 scalable font definitions for T1/fvm.
-)
-LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 8.50006pt on input line 131.
- (./matlabscript.m) (./matlabscript.m) [1
+Overfull \hbox (6.06564pt too wide) detected at line 121
+[][]
+ []
 
-] [2] (./matlabscript.m
-LaTeX Font Info:    Try loading font information for TS1+fvm on input line 10.
- (/usr/local/texlive/2018/texmf-dist/tex/latex/bera/ts1fvm.fd
-File: ts1fvm.fd 2004/09/07 scalable font definitions for TS1/fvm.
-)
-LaTeX Font Info:    Font shape `TS1/fvm/m/n' will be
-(Font)              scaled to size 8.50006pt on input line 10.
-) [3] (./ithw.aux) ) 
+[1
+
+] [2] (./ithw.aux) ) 
 Here is how much of TeX's memory you used:
- 7710 strings out of 492933
- 112645 string characters out of 6133145
- 288674 words of memory out of 5000000
- 11591 multiletter control sequences out of 15000+600000
- 37983 words of font info for 50 fonts, out of 8000000 for 9000
+ 7558 strings out of 492933
+ 110298 string characters out of 6133145
+ 207674 words of memory out of 5000000
+ 11472 multiletter control sequences out of 15000+600000
+ 30484 words of font info for 40 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 59i,14n,118p,855b,1195s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 59i,9n,118p,814b,523s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on ithw.xdv (3 pages, 23348 bytes).
+Output written on ithw.pdf (2 pages).
