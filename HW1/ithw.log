@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.3.23)  16 SEP 2020 14:45
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.3.23)  16 SEP 2020 20:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -422,24 +422,33 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 37.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for TS1+lmr on input line 54.
+LaTeX Font Info:    Try loading font information for TS1+lmr on input line 57.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-Overfull \hbox (6.06564pt too wide) detected at line 121
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 58.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+Overfull \hbox (6.06564pt too wide) detected at line 126
 [][]
  []
 
 [1
 
-] [2] (./ithw.aux) ) 
-Here is how much of TeX's memory you used:
- 7558 strings out of 492933
- 110298 string characters out of 6133145
- 207674 words of memory out of 5000000
- 11472 multiletter control sequences out of 15000+600000
- 30484 words of font info for 40 fonts, out of 8000000 for 9000
- 1348 hyphenation exceptions out of 8191
- 59i,9n,118p,814b,523s stack positions out of 5000i,500n,10000p,200000b,80000s
+] [2]
+Overfull \hbox (7.24826pt too wide) detected at line 218
+[][]
+ []
 
-Output written on ithw.pdf (2 pages).
+[3] [4] (./ithw.aux) ) 
+Here is how much of TeX's memory you used:
+ 7627 strings out of 492933
+ 111185 string characters out of 6133145
+ 210674 words of memory out of 5000000
+ 11523 multiletter control sequences out of 15000+600000
+ 38748 words of font info for 60 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 59i,9n,118p,814b,589s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on ithw.pdf (4 pages).

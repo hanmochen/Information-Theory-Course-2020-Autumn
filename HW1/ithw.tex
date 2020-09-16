@@ -48,16 +48,19 @@
 \setlist[enumerate,3]{label=\roman*.}
 \setlist[enumerate,4]{label=\greek*)}
 
+
+\newcommand{\EX}{\mathbb{E}}
+
 \flushleft
 \rule{\textwidth}{1pt}
 \begin{itemize}
 \item {\bf Acknowledgments: \/} 
-  \textcolor{gray}{None}
+  \textcolor{gray}{For Problem 1.2(b), I refer to some answer on StackExchange \small{\url{https://math.stackexchange.com/a/108303}}}
   % \textcolor{gray}{This template takes some materials from course CSE 547/Stat 548 of Washington University: \small{\url{https://courses.cs.washington.edu/courses/cse547/17sp/index.html}}.}
 
   % \textcolor{red}{If you refer to other materials in your homework, please list here.}
 \item {\bf Collaborators: \/}
-  \textcolor{gray}{I finish this template by myself.} 
+  \textcolor{gray}{I finish this homework all by myself.} 
 % \textcolor{red}{If you finish your homework all by yourself, make a similar statement. If you get help from others in finishing your homework, state like this:}
 %   \textcolor{gray}{
 %   \begin{itemize}
@@ -86,7 +89,7 @@
         \item $\mathbb{E}[x| y]=\mathbb{E}[\mathbb{E}[x | yz] |y]$
         \\~ 
         
-        Proof: 
+        \begin{proof}
         \begin{equation}
           \begin{aligned}
             \mathbb{E} [x|yz] = \sum_{x} xP_{X|YZ}(x|yz)
@@ -106,12 +109,14 @@
         \end{equation}
 
         So we have $\mathbb{E}[x| y]=\mathbb{E}[\mathbb{E}[x | yz] |y]$
+      \end{proof}
+      ~\\~
 
       \item $\mathbb{E}[xg(y) |y] = g(y)\mathbb{E}[x| y]$
       \\~
 
-      Proof:
-
+      \begin{proof}
+        
       \begin{equation}\label{eq3}
         \begin{aligned}
           \mathbb{E}[xg(y) |y]& = \sum_{x} xg(y) P_{X|Y}(x|y) \\
@@ -120,10 +125,12 @@
         \end{aligned}
       \end{equation}
 
+    \end{proof}
+
       \item  $\mathbb{E}[x\mathbb{E}[x|y]]=\mathbb{E}\left[(\mathbb{E}[x | y])^{2}\right]$
       \\~
 
-      Proof:
+      \begin{proof}
 
       Denote $\mathbb{E}[x|y]$ as $g(y)$, using the conclusion from Equation [\ref{eq3}], considering the following expression $\mathbb{E}[xg(y)|y]$
 
@@ -142,16 +149,202 @@
           & = \mathbb{E}[{(\mathbb{E}[x|y])^2}]
         \end{aligned}
       \end{equation}
+    \end{proof}
+      
+    \item $\operatorname{var}(x)=\mathbb{E}[\operatorname{var}(x | y)]+\operatorname{var}(\mathbb{E}[x|y]) $
+      \\~
 
-    \item 
+      \begin{proof}
 
-    
+      Because $\var (x|y) = \EX[(x-\EX[x|y])^2 |y] = \EX[x^2|y] - (\EX[x|y])^2$,
 
+      \begin{equation}
+        \begin{aligned}
+          \EX[\var (x|y)]& = \EX[ \EX[x^2|y] - (\EX[x|y])^2] \\& = \EX[x^2] - \EX[(\EX[x|y])^2]
+        \end{aligned}
+      \end{equation}
 
+      Meanwhile,
 
+      \begin{equation}
+        \begin{aligned}
+          \var(\EX[x|y]) & = \EX [ (\EX[x|y])^2 ]- (\EX[\EX[x|y]])^2 \\
+          & = \EX [ (\EX[x|y])^2 ]- (\EX[x])^2 
+        \end{aligned}
+      \end{equation}
 
+    Therefore,
+
+    \begin{equation}
+      \begin{aligned}
+        \EX[\var (x|y)] + \var(\EX[x|y]) = & \EX[x^2] - \EX[(\EX[x|y])^2] \\ 
+         & + \EX [ (\EX[x|y])^2 ]- (\EX[x])^2 \\ = &\EX[x^2] - (\EX[x])^2 \\ =&\var(x)
+      \end{aligned}
+    \end{equation}
+  \end{proof}
       \end{enumerate}
+
+    \item \begin{enumerate}
+      \item $\cov(\underline{x}) = \EX[\cov(\underline{x}|y)]+ \cov (\EX[\underline{x} | y])$
+      \\~
+
+      \begin{proof}
+        
+      Because $\cov(\underline{x} | y) = \EX [\underline{x}\cdot\underline{x}^T | y ] - \EX[\underline{x}|y] \cdot (\EX[\underline{x}|y])^T$,
+
+        \begin{equation}
+          \begin{aligned}
+            \EX[\cov(\underline{x} | y)] &= \EX[\EX [\underline{x}\cdot\underline{x}^T | y ] - \EX[\underline{x}|y] \cdot (\EX[\underline{x}|y])^T] \\& = \EX [\underline{x}\cdot\underline{x}^T] - \EX[\EX[\underline{x}|y] \cdot (\EX[\underline{x}|y])^T]]
+          \end{aligned}
+        \end{equation}
+
+      Meanwhile,
+
+      \begin{equation}
+        \begin{aligned}
+          \cov(\EX[\underline{x}|y]) & = \EX [ \EX[\underline{x}|y]\cdot (\EX[\underline{x}|y])^T ]- \EX[\EX[x|y]] \cdot (\EX[\EX[x|y]])^T \\
+          & = \EX [ \EX[\underline{x}|y]\cdot (\EX[\underline{x}|y])^T ]- \EX[x]\cdot(\EX[x])^T 
+        \end{aligned}
+      \end{equation}
+
+    Therefore,
+
+    \begin{equation}
+      \begin{aligned}
+        \EX[\cov(\underline{x}|y)]+ \cov (\EX[\underline{x} | y]) = & \EX [\underline{x}\cdot\underline{x}^T] - \EX[\EX[\underline{x}|y] \cdot (\EX[\underline{x}|y])^T]] \\ 
+        & + \EX [ \EX[\underline{x}|y]\cdot (\EX[\underline{x}|y])^T ]- \EX[x]\cdot(\EX[x])^T 
+         \\ = &\EX [\underline{x}\cdot\underline{x}^T]- \EX[x]\cdot(\EX[x])^T  \\ =&\cov(\underline{x})
+      \end{aligned}
+    \end{equation}
+
+      \end{proof}
+
+    \item \begin{proof}
+      Denote $\Sigma = \cov(\underline{x}) = \EX[(\underline{x} - \underline{\mu})(\underline{x} - \underline{\mu})^T], \underline{\mu} = \EX[\underline{x}]$, then 
+
+      \begin{equation}
+        \det(\Sigma) = 0 \Longleftrightarrow \exists \underline{b}\in \mathbb{R}^k \backslash \{\underline{0}\} \text{ such that } \Sigma \underline{b} = 0
+      \end{equation}
+
+      "$\Longrightarrow$":
+
+      Denote $\underline{\alpha} = \underline{x} - \underline{\mu}$, 
+
+      \begin{equation}
+        \begin{aligned}
+          \Sigma \underline{b} = \EX[\underline{\alpha}\underline{\alpha}^T] \underline{b} = \EX[\underline{\alpha}\underline{\alpha}^T \underline{b}]   = 0
+        \end{aligned}
+      \end{equation}
+
+      Mutiplied by $\underline{b}^T$, and denote $\underline{\beta} =\underline{b}^T\underline{\alpha} $, we have 
+
+      \begin{equation}
+        \begin{aligned}
+          \EX[\underline{b}^T\underline{\alpha}\underline{\alpha}^T \underline{b}] = \EX[\underline{\beta} \underline{\beta}^T] = 0
+        \end{aligned}
+      \end{equation}
+
+      Suppose $\underline{\beta} = (\beta_1,\beta_2,\cdots,\beta_k)^T$, considering the diagonal elements of $\underline{\beta} \underline{\beta}^T$, the $i$-th diagonal element is $\beta_{i}^2\geqslant 0$, so $\EX[\beta_i^2] \geqslant 0$, but $\EX[\underline{\beta} \underline{\beta}^T] = 0$, which means $\beta_i = 0$ and $\underline{\beta} = \underline{0}$.
+
+      \begin{equation}
+        \begin{aligned}
+          \underline{b}^T(\underline{x}-\underline{\mu}) = 0 \Longleftrightarrow \underline{b}^T\underline{x}= \underline{b}^T\underline{\mu}
+        \end{aligned}
+      \end{equation}
+
+      So $\exists \underline{c} = \underline{b} \in \mathbb{R}^k \backslash \{\underline{0}\} \text{ such that } \underline{c}^T \underline{x} = \underline{b}^T \underline{\mu} $ is a constant.
+
+      ~\\
+
+      "$\Longleftarrow$":
+
+        Because $\underline{c}^T \underline{x}$ is a constant,
+
+        \begin{equation}
+          \underline{c}^T \underline{x} = \EX[\underline{c}^T \underline{x}] = \underline{c}^T \EX[ \underline{x}] = \underline{c}^T \underline{\mu}
+        \end{equation}
+
+        That is, $\underline{c}^T(\underline{x} - \underline{\mu}) = 0$, so $\underline{c}^T(\underline{x} - \underline{\mu})(\underline{x} - \underline{\mu})^T = 0$,
+
+        \begin{equation}
+           \EX[\underline{c}^T(\underline{x} - \underline{\mu})(\underline{x} - \underline{\mu})^T] = \underline{c}^T \EX[(\underline{x} - \underline{\mu})(\underline{x} - \underline{\mu})^T] = c^T \Sigma  = 0
+        \end{equation}
+
+        So $\det (\Sigma) = 0$
+    \end{proof}
     \end{enumerate}
+    \end{enumerate}
+
+  \item \begin{enumerate}
+    \item \begin{proof}
+      To minimize $L = \EX[(y-ax-b)^2] = \EX[y^2] +a^2 \EX[x^2] +b^2 - 2a\EX[xy] +2ab\EX[x] -2b \EX[y]$, let the partial derivative equals 0.
+
+      \begin{equation}
+      \left\{
+      \begin{aligned}
+          \frac{\partial L }{\partial a}  &= 2a \EX[x^2] -2\EX[xy]+2b\EX[x] = 0  \\ \frac{\partial L }{\partial b}  &= 2b +2a\EX[x]-2\EX[y]=0 
+      \end{aligned}
+      \right.
+      \end{equation}
+
+      Solve the equation, we have 
+
+      \begin{equation}
+        a^* = \frac{\EX[xy]-\EX[x]\EX[y]}{\EX[x^2]-(\EX[x])^2} = \frac {\EX[(x-\EX[x])(y-\EX[y])]}{\var(x)}
+      \end{equation}
+
+      When $\var(x) = \var(y)$ we have $\rho(x,y) = a^*$ 
+    \end{proof}
+
+    \item \begin{proof}
+      $x$ and $y$ is independent means $ P_{X,Y}(x,y) = P_{X}(x) P_{Y}(y)$, and $\rho(f(x),g(y)) = 0$ means $\EX[f(x)] \EX[g(y)] = \EX[f(x)g(y)]$
+
+      "$\Longrightarrow$": 
+
+      Suppose $ P_{X,Y}(x,y) = P_{X}(x) P_{Y}(y)$, for $\forall f,g$
+
+      \begin{equation}
+        \begin{aligned}
+          \EX [f(x)g(y)] & = \sum_{x,y} f(x)g(y) P_{X,Y}(x,y)  \\
+          & = \sum_{x,y} f(x)g(y)  P_{X}(x) P_{Y}(y)dxdy \\ 
+          & = \sum_{x} f(x) P_{X}(x)  \sum_{y} g(y) P_{Y}(y)  \\ 
+          & = \EX[f(x)] \EX[g(y)]
+        \end{aligned}
+      \end{equation}
+
+      "$\Longleftarrow$": 
+
+      Suppose $\EX[f(x)] \EX[g(y)] = \EX[f(x)g(y)]$, for all $A,B \in \mathbb{R}$
+      Let $f(x)$ be the indicator random variable $f(x) = \mathbb{I}(x\in A)$, $g(y) = \mathbb{I}(y\in B)$
+      \begin{equation}
+        \begin{aligned}
+          P(x\in A, y \in B) &= \EX[\mathbb{I}(x\in A)\mathbb{I}(y\in B)] = \EX[f(x)g(y)] \\
+          & = \EX[f(x)]\EX[g(y)] = \EX[\mathbb{I}(x\in A)] \EX[\mathbb{I}(y\in B)] ] \\
+          & = P(x\in A) P(y\in B)
+        \end{aligned}
+      \end{equation}
+
+      So $P_{X,Y}(x,y) = P_X(x)P_Y(y)$ which means $X,Y$ are independent.
+    \end{proof}
+  \end{enumerate}
+
+  \item Let $X\sim N(0,1)$,the \textit{pdf} of $X$ is $f_X(x) = -\frac {1}{\sqrt{2\pi}} e^{-\frac 1 2 x^2}$, denote the cumulative distribution function $\Phi(x) = P(X\leqslant x )$ and  $\Phi'(x) = f_X(x)$.
+  
+  Suppose $Y = exp(X)$, we try to find the cumulative distribution function $P(Y\leqslant y)$,
+
+  \begin{equation}
+    \begin{aligned}
+      P(Y\leqslant y) = P(X\leqslant \ln y) = \Phi(\ln y)
+    \end{aligned}
+  \end{equation}
+
+  Therefore, the \textit{pdf} of $Y$ is,
+
+  \begin{equation}
+    f_Y(y) = \frac {d \Phi(\ln y)}{ dy} = f_X(\ln y) \frac 1 y = -\frac {1}{\sqrt{2\pi} y} e^{-\frac 1 2 (\ln y)^2}
+  \end{equation}
+
+  \end{enumerate}
 % \item You may find \url{https://en.wikibooks.org/wiki/LaTeX} useful.
 %   \begin{enumerate}
 %     \item Writing \LaTeX\ online may be easier for beginners. You may find Overleaf (\url{https://www.overleaf.com/}) useful.
@@ -205,7 +398,7 @@
 %     \end{aligned}    
 %   \end{equation*}
     
-\end{enumerate}
+
   
 %   \newpage
   
