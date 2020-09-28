@@ -1,0 +1,147 @@
+% Homework template for Information Theory and Statistical Learning
+% by Xiangxiang Xu <xiangxiangxu.thu@gmail.com>
+% LAST UPDATE: Oct 3, 2019
+\documentclass[a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amssymb, amsthm}
+% amsmath: equation*, amssymb: mathbb, amsthm: proof
+\usepackage{moreenum}
+\usepackage{mathtools}
+\usepackage{url}
+\usepackage{enumitem}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{booktabs} % toprule
+\usepackage[mathcal]{eucal}
+\usepackage{dsfont}
+\usepackage[numbered,framed]{matlab-prettifier}
+\input{itdef}
+
+\lstset{
+  style              = Matlab-editor,
+  captionpos         =b,
+  basicstyle         = \mlttfamily,
+  escapechar         = ",
+  mlshowsectionrules = true,
+}
+\begin{document}
+\courseheader
+
+
+
+\newcounter{hwcnt}
+\setcounter{hwcnt}{1} % set to the times of Homework
+
+\begin{center}
+  \underline{\bf Homework \thehwcnt} \\
+\end{center}
+\begin{flushleft}
+  \textcolor{gray}{YOUR NAME}\hfill
+  \today
+\end{flushleft}
+\hrule
+
+\vspace{2em}
+\setlist[enumerate,1]{label=\thehwcnt.\arabic*.}
+\setlist[enumerate,2]{label=(\alph*)}
+\setlist[enumerate,3]{label=\roman*.}
+\setlist[enumerate,4]{label=\greek*)}
+
+\flushleft
+\rule{\textwidth}{1pt}
+\begin{itemize}
+\item {\bf Acknowledgments: \/} 
+  \textcolor{gray}{This template takes some materials from course CSE 547/Stat 548 of Washington University: \small{\url{https://courses.cs.washington.edu/courses/cse547/17sp/index.html}}.}
+
+  \textcolor{red}{If you refer to other materials in your homework, please list here.}
+\item {\bf Collaborators: \/}
+  \textcolor{gray}{I finish this template by myself.} \textcolor{red}{If you finish your homework all by yourself, make a similar statement. If you get help from others in finishing your homework, state like this:}
+  \textcolor{gray}{
+  \begin{itemize}
+  \item 1.2 (b) was solved with the help from \underline{\hspace{3em}}.
+  \item Discussion with \underline{\hspace{3em}} helped me finishing 1.3.
+  \end{itemize}
+}
+\item  \emph{I certify that all solutions are entirely in my words and that I have not looked at another student's solutions. I have credited all external sources in this write up.}
+  \framebox[\linewidth]{\rule{0pt}{10pt}\textcolor{gray}{\large Your signature}}
+\end{itemize}
+\rule{\textwidth}{1pt}
+
+
+\vspace{2em}
+
+You may use \texttt{enumerate} to generate answers for each question:
+
+\begin{enumerate}
+  \setlength{\itemsep}{3\parskip}
+
+\item You may find \url{https://en.wikibooks.org/wiki/LaTeX} useful.
+  \begin{enumerate}
+    \item Writing \LaTeX\ online may be easier for beginners. You may find Overleaf (\url{https://www.overleaf.com/}) useful.
+    \end{enumerate}
+  \item You may need aligned equations for your homework, here are several examples:
+    
+    Total probability rule:
+  \begin{equation*}
+    \begin{aligned}
+      \Prob(X = x)
+      &= \sum_{y \in \mathcal{Y}} \Prob(X = x, Y = y)\\
+      &= \sum_{y \in \mathcal{Y}} \Prob(X = x| Y = y) \Prob(Y = y),\\
+    \end{aligned}
+  \end{equation*}
+  or
+  \begin{equation*}
+    \begin{aligned}
+      P_{X}(x)
+      &= \sum_{y \in \mathcal{Y}} P_{XY}(x,y)\\
+      &= \sum_{y \in \mathcal{Y}} P_{X|Y}(x|y)P_{Y}(y).\\
+    \end{aligned}
+  \end{equation*}
+  Indicator function:
+  \begin{equation*}
+    \1_A(\omega)=
+    \left\{
+    \begin{aligned}
+      1, &\quad\text{if}~ \omega \in A,\\
+      0, &\quad\text{if}~ \omega \notin A.
+    \end{aligned}
+    \right.
+  \end{equation*}
+
+  \item You may need to add figures and source codes in your homework. Figure \ref{fig:1} is an example that compares the empirical distribution (histogram) and probability density function of a Gaussian random variable.
+    \begin{figure}[htbp]
+      \centering
+      \includegraphics[width = 0.8\textwidth]{pdf_normal.eps}
+      \caption{Gaussian PDF and histogram of samples}
+      \label{fig:1}
+    \end{figure}
+
+  The source code to plot Figure \ref{fig:1} could be found in Appendix \ref{sec:a:code}. Here are the core codes:
+  \lstinputlisting[firstline=4,lastline=4, firstnumber=4]{matlabscript.m}
+  \lstinputlisting[firstline=6,lastline=7, firstnumber=6]{matlabscript.m}
+  To understand line 6, note that if we have $n$ samples of $X$ denoted by $x^{(i)}, i = 1, 2, \cdots, n$, then the probability density function $p_{X}$ can be estimated as
+  \begin{equation*}
+    \begin{aligned}
+      p_{X}(x_0) &= \left.\frac{\mathrm{d}}{\mathrm{d}x} \Prob(X \leq x) \right|_{x = x_0} \\
+      &\approx \frac{\Prob(x_0 - \Delta x < X \leq x_0)}{\Delta x}\\
+      &\approx \frac{1}{n\Delta x} \sum_{i = 1}^n \1_{x^{(i)} \in (x_0 - \Delta x, x_0]}.
+    \end{aligned}    
+  \end{equation*}
+    
+\end{enumerate}
+  
+  \newpage
+  
+  \appendix
+  \section{Source code}
+  \label{sec:a:code}
+  % \lstlistoflistings
+  The source code for plotting Figure \ref{fig:1} is shown as follows.
+  \lstinputlisting{matlabscript.m}
+  
+\end{document}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
