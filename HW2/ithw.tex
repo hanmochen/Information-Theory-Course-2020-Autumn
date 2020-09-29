@@ -292,6 +292,79 @@
 
      \end{enumerate}
 
+     \item \textit{Total Correlation.}
+     \begin{enumerate}
+       \item Part 1
+       \begin{equation}
+        \begin{aligned}
+          C\left(X_{1}, \ldots, X_{n}\right) & \triangleq D\left(P_{X^{n}} \| \prod_{i=1}^{n} P_{X_{i}}\right) \\
+          & = \mathbb{E}_{X^n} [\log \left(\frac{P_{X^n}}{\prod_{i=1}^n P_{X_i}}\right)] \\
+          & = \mathbb{E}_{X^n} [\log P_{X^n}] - \sum_{i=1}^n \mathbb{E}_{X^n} [\log P_{X_i}] \\
+          & = -H(X^n) - \sum_{i=1}^n \mathbb{E}_{X^i} [\log P_{X_i}] \\
+          & = \sum_{i=1}^n H(X_i) -H(X^n)
+        \end{aligned}
+       \end{equation}
+
+       Part 2
+
+       Because $I(X^i;X_{i+1}) =H(X^i) + H(X_{i+1}) - H(X^i,X_{i+1}) = H(X^i) + H(X_{i+1}) - H(X^{i+1})$
+       \begin{equation}
+         \begin{aligned}
+           \sum_{i=1}^{n-1} I(X^i;X_{i+1}) & = \sum_{i=1}^{n-1}H(X^i) + H(X_{i+1}) - H(X^{i+1}) \\ & = \sum_{i=1}^{n}H(X_i)  - H(X^{n}) =  C\left(X_{1}, \ldots, X_{n}\right)
+         \end{aligned}
+       \end{equation}
+
+    \item $C\left(X_{1}, \ldots, X_{n}\right) \triangleq D\left(P_{X^{n}} \| \prod_{i=1}^{n} P_{X_{i}}\right) = 0$ when $P_{X^{n}} = \prod_{i=1}^{n} P_{X_{i}}$, that is, $X_1,X_2,\cdots,X_n$ are independent.
+    
+     \end{enumerate}
+
+     \item \textit{Divergence of order statistics.}
+     \begin{enumerate}
+       \item The joint distribution of order statistics is, 
+       \begin{equation}
+        f_{X_{(1)}, \ldots, X_{(n)}}\left(y_{1}, \ldots, y_{n}\right)=n ! \prod_{i=1}^{n} f\left(y_{i}\right), \quad y_{1}<y_{2}<\cdots<y_{n}
+       \end{equation}
+
+       Thus,
+
+       \begin{equation}
+        \begin{aligned}
+          D\left(P_{X_{(1)} \ldots X_{(n)}} \| Q_{\left.X_{(1)} \ldots X_{(n)}\right)}\right) & = \mathbb{E}_{P_{X_{(1)} \ldots X_{(n)}}} \left[\log \left(\frac{P_{{X_{(1)}, \ldots, X_{(n)}}}}{Q_{{X_{(1)}, \ldots, X_{(n)}}}}\right)\right] \\
+          & = \mathbb{E}_{P_{X_{(1)} \ldots X_{(n)}}} \left[\log \left(\frac{\prod_{i=1}^{n} P\left(y_{i}\right)}{\prod_{i=1}^{n} Q\left(y_{i}\right)}\right)\right] \\ 
+          & = \sum_{i=1}^n \mathbb{E}_{P_{X_{(1)} \ldots X_{(n)}}} \left[\log \left(\frac{ P\left(y_{i}\right)}{ Q\left(y_{i}\right)}\right)\right] \\ 
+          & = \sum_{i=1}^n \mathbb{E}_{P_{X_{1} \ldots X_{n}}} \left[\log \left(\frac{ P\left(x_{i}\right)}{ Q\left(x_{i}\right)}\right)\right] \\
+          & = \sum_{i=1}^n \mathbb{E}_{P_{X_{i}}} \left[\log \left(\frac{ P\left(x_{i}\right)}{ Q\left(x_{i}\right)}\right)\right] \\
+          & = nD(P\| Q)
+        \end{aligned}
+       \end{equation}
+
+       \item For $X\sim \text{Binom}(n,p)$, the p.m.f. is 
+       
+       \begin{equation}
+         P(X=i) = \binom{n}{i}p^i (1-p)^{n-i}
+       \end{equation}
+
+       Thus,
+
+       \begin{equation}
+        \begin{aligned}
+          D(\operatorname{Binom}(n, p) \| \operatorname{Binom}(n, q)) &= \sum_{i=0}^n \binom{n}{i}p^i (1-p)^{n-i} \log \left(\left(\frac {p(1-q)}{q(1-p)}\right)^ i \left(\frac {1-p}{1-q}\right)^n\right) \\
+          & = n\log \left(\frac {1-p}{1-q}\right) +  \sum_{i=0}^n i\binom{n}{i}p^i (1-p)^{n-i} \log \left(\frac {p(1-q)}{q(1-p)}\right) \\
+          & = n\log \left(\frac {1-p}{1-q}\right) + np \log \left(\frac {p(1-q)}{q(1-p)}\right)
+        \end{aligned}
+      \end{equation}
+
+      Let $n=1$, 
+      \begin{equation}
+        D(\operatorname{Bern}(p) \| \operatorname{Bern}(q)) = \log \left(\frac {1-p}{1-q}\right) + p \log \left(\frac {p(1-q)}{q(1-p)}\right)
+      \end{equation}
+
+      So 
+      \begin{equation}
+        D(\operatorname{Binom}(n, p) \| \operatorname{Binom}(n, q))=n D(\operatorname{Bern}(p) \| \operatorname{Bern}(q))
+      \end{equation}
+
+     \end{enumerate}
 % \item You may find \url{https://en.wikibooks.org/wiki/LaTeX} useful.
 %   \begin{enumerate}
 %     \item Writing \LaTeX\ online may be easier for beginners. You may find Overleaf (\url{https://www.overleaf.com/}) useful.
