@@ -1,9 +1,9 @@
 # Fdb version 3
-["xdvipdfmx"] 1601383130 "ithw.xdv" "ithw.pdf" "ithw" 1601383131
-  "ithw.xdv" 1601383129 30008 49654c8614dfe085db39f5832a28cc7d "xelatex"
+["xdvipdfmx"] 1601383634 "ithw.xdv" "ithw.pdf" "ithw" 1601383635
+  "ithw.xdv" 1601383634 29988 8093f29edc29a720992e922c39eedb87 "xelatex"
   (generated)
   "ithw.pdf"
-["xelatex"] 1601383128 "ithw.tex" "ithw.xdv" "ithw" 1601383131
+["xelatex"] 1601383633 "ithw.tex" "ithw.xdv" "ithw" 1601383635
   "/usr/local/texlive/2018/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/local/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm" 1480098698 1120 1e8878807317373affa7f7bba4cf2f6a ""
   "/usr/local/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy7.tfm" 1480098698 1120 7f9f170e8aa57527ad6c49feafd45d54 ""
@@ -95,8 +95,8 @@
   "/usr/local/texlive/2018/texmf-var/web2c/xetex/xelatex.fmt" 1553378829 3737826 3c9ee2198fc3e18a713a1b12e057fce6 ""
   "/usr/local/texlive/2018/texmf.cnf" 1523934483 577 0b39adfd7c93507ff20c9c14c2f1a33f ""
   "itdef.tex" 1600094570 4501 7af1341a22ddc14e210d76bab50da7b3 ""
-  "ithw.aux" 1601383129 56 3ada79f4d09c83c45efa920889c37312 ""
-  "ithw.tex" 1601383128 23093 37f32e20687abab76170ea8b55b34ba9 ""
+  "ithw.aux" 1601383634 56 3ada79f4d09c83c45efa920889c37312 ""
+  "ithw.tex" 1601383522 23054 33e013880afeb3fb438b90fb3d9a5cae ""
   (generated)
   "ithw.aux"
   "ithw.log"

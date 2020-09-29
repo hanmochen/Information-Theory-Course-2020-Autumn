@@ -362,7 +362,7 @@
 
       \begin{equation}
         \begin{aligned}
-          D\left[P(\boldsymbol{Y}) \| Q(\boldsymbol{Y})\right] &= D\left[P(\boldsymbol{Y} \mid \boldsymbol{X} )\| Q(\boldsymbol{Y} \mid \boldsymbol{X} ) )\right] \\
+          D\left[P(\boldsymbol{Y}) \| Q(\boldsymbol{Y})\right] &= D\left[P( \boldsymbol{X} )\| Q(\boldsymbol{X} ) )\right] \\
           & = \sum_{i=1}^n \mathbb{E}_{P_{X_{1} \ldots X_{n}}} \left[\log \left(\frac{ P\left(x_{i}\right)}{ Q\left(x_{i}\right)}\right)\right] \\
           & = \sum_{i=1}^n \mathbb{E}_{P_{X_{i}}} \left[\log \left(\frac{ P\left(x_{i}\right)}{ Q\left(x_{i}\right)}\right)\right] \\ 
           & = nD(P \| Q)
