@@ -325,18 +325,64 @@
         f_{X_{(1)}, \ldots, X_{(n)}}\left(y_{1}, \ldots, y_{n}\right)=n ! \prod_{i=1}^{n} f\left(y_{i}\right), \quad y_{1}<y_{2}<\cdots<y_{n}
        \end{equation}
 
-       Thus,
 
-       \begin{equation}
+      Denote $\boldsymbol{X}$ as the random vector $(X_1,\cdots,X_n)$ and $\boldsymbol{Y}$ as the order statistics $(X_{(1)},\cdots,X_{(n)})$. Consider The conditional distribution 
+      \begin{equation}
+        P(\boldsymbol{X}\mid \boldsymbol{Y} ) = \left\{\begin{aligned}
+          &\frac{1}{n!},\quad \text{if  }  (X_1,\cdots,X_n)\text{ is a permutation of } (X_{(1)},\cdots,X_{(n)}) \\ &0, \quad \text{else}
+        \end{aligned}\right.
+      \end{equation}
+
+      It shows that the conditional distribution of the original $\boldsymbol{X}$ given the order statistics is irrelevant to the original distribution $P$ or $Q$.Thus,
+
+      \begin{equation}
+        D\left[P(\boldsymbol{X} \mid \boldsymbol{Y} )\| Q(\boldsymbol{X} \mid \boldsymbol{Y} )\right] = 0
+      \end{equation}
+
+      Also, given the original random variable, the order statistics are fixed.
+
+      \begin{equation}
+        D\left[P(\boldsymbol{Y} \mid \boldsymbol{X} )\| Q(\boldsymbol{Y} \mid \boldsymbol{X} ) )\right] = 0
+      \end{equation}
+
+
+      Using the chain rule for K-L divergence twice
+
+      \begin{equation}
+        D(p(x, y) \| q(x, y))=D(p(x) \| q(x))+D(p(y \mid x) \| q(y \mid x))
+      \end{equation}
+
+      \begin{equation}
         \begin{aligned}
-          D\left(P_{X_{(1)} \ldots X_{(n)}} \| Q_{\left.X_{(1)} \ldots X_{(n)}\right)}\right) & = \mathbb{E}_{P_{X_{(1)} \ldots X_{(n)}}} \left[\log \left(\frac{P_{{X_{(1)}, \ldots, X_{(n)}}}}{Q_{{X_{(1)}, \ldots, X_{(n)}}}}\right)\right] \\
-          & = \mathbb{E}_{P_{X_{(1)} \ldots X_{(n)}}} \left[\log \left(\frac{\prod_{i=1}^{n} P\left(y_{i}\right)}{\prod_{i=1}^{n} Q\left(y_{i}\right)}\right)\right] \\ 
-          & = \sum_{i=1}^n \mathbb{E}_{P_{X_{(1)} \ldots X_{(n)}}} \left[\log \left(\frac{ P\left(y_{i}\right)}{ Q\left(y_{i}\right)}\right)\right] \\ 
-          & = \sum_{i=1}^n \mathbb{E}_{P_{X_{1} \ldots X_{n}}} \left[\log \left(\frac{ P\left(x_{i}\right)}{ Q\left(x_{i}\right)}\right)\right] \\
-          & = \sum_{i=1}^n \mathbb{E}_{P_{X_{i}}} \left[\log \left(\frac{ P\left(x_{i}\right)}{ Q\left(x_{i}\right)}\right)\right] \\
-          & = nD(P\| Q)
+          D\left[P(\boldsymbol{Y} \mid \boldsymbol{X} )\| Q(\boldsymbol{Y} \mid \boldsymbol{X} ) )\right] + D\left[P(\boldsymbol{X}) \| Q(\boldsymbol{X})\right]  \\ =D\left[P(\boldsymbol{X} \mid \boldsymbol{Y} )\| Q(\boldsymbol{X} \mid \boldsymbol{Y} )\right] + D\left[P(\boldsymbol{Y}) \| Q(\boldsymbol{Y})\right]
         \end{aligned}
-       \end{equation}
+      \end{equation}
+
+      Thus,
+
+      \begin{equation}
+        \begin{aligned}
+          D\left[P(\boldsymbol{Y}) \| Q(\boldsymbol{Y})\right] &= D\left[P(\boldsymbol{Y} \mid \boldsymbol{X} )\| Q(\boldsymbol{Y} \mid \boldsymbol{X} ) )\right] \\
+          & = \sum_{i=1}^n \mathbb{E}_{P_{X_{1} \ldots X_{n}}} \left[\log \left(\frac{ P\left(x_{i}\right)}{ Q\left(x_{i}\right)}\right)\right] \\
+          & = \sum_{i=1}^n \mathbb{E}_{P_{X_{i}}} \left[\log \left(\frac{ P\left(x_{i}\right)}{ Q\left(x_{i}\right)}\right)\right] \\ 
+          & = nD(P \| Q)
+        \end{aligned}
+      \end{equation}
+
+      
+
+      %  Thus,
+
+      %  \begin{equation}
+      %   \begin{aligned}
+      %     D\left(P_{X_{(1)} \ldots X_{(n)}} \| Q_{\left.X_{(1)} \ldots X_{(n)}\right)}\right) & = \mathbb{E}_{P_{X_{(1)} \ldots X_{(n)}}} \left[\log \left(\frac{P_{{X_{(1)}, \ldots, X_{(n)}}}}{Q_{{X_{(1)}, \ldots, X_{(n)}}}}\right)\right] \\
+      %     & = \mathbb{E}_{P_{X_{(1)} \ldots X_{(n)}}} \left[\log \left(\frac{\prod_{i=1}^{n} P\left(y_{i}\right)}{\prod_{i=1}^{n} Q\left(y_{i}\right)}\right)\right] \\ 
+      %     & = \sum_{i=1}^n \mathbb{E}_{P_{X_{(1)} \ldots X_{(n)}}} \left[\log \left(\frac{ P\left(y_{i}\right)}{ Q\left(y_{i}\right)}\right)\right] \\ 
+      %     & = \sum_{i=1}^n \mathbb{E}_{P_{X_{1} \ldots X_{n}}} \left[\log \left(\frac{ P\left(x_{i}\right)}{ Q\left(x_{i}\right)}\right)\right] \\
+      %     & = \sum_{i=1}^n \mathbb{E}_{P_{X_{i}}} \left[\log \left(\frac{ P\left(x_{i}\right)}{ Q\left(x_{i}\right)}\right)\right] \\
+      %     & = nD(P\| Q)
+      %   \end{aligned}
+      %  \end{equation}
 
        \item For $X\sim \text{Binom}(n,p)$, the p.m.f. is 
        
