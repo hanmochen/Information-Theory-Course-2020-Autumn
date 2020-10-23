@@ -1,0 +1,133 @@
+%% Definitions for Information Theory & Statistical Learning
+%% UPDATED: Sep 30, 2019 by Xiangxiang 
+\newcommand{\theterm}{Fall 2020}
+
+\newcommand{\thecoursenameshort}{\textsc{Information Theory and Statistical Learning}}
+\newcommand{\thecoursename}{
+Tsinghua-Berkeley Shenzhen Institute\\
+%\vspace*{0.1in}
+\thecoursenameshort
+}
+
+\newcommand{\courseheader}{
+\vspace*{-1in}
+\begin{center}
+\thecoursename \\
+\theterm
+\vspace*{0.1in}
+\hrule
+\end{center}
+}
+\newcommand{\uc}{\underline{c}}    % c, vec
+\newcommand{\uv}{\underline{v}}    % x, vec
+\newcommand{\uw}{\underline{w}}    % w, vec
+\newcommand{\ux}{\underline{x}}    % x, vec
+\newcommand{\uy}{\underline{y}}    % y, vec
+\newcommand{\uz}{\underline{z}}    % z, vec
+\newcommand{\um}{\underline{m}}    % m, vec
+\newcommand{\ut}{\underline{t}}    % t, vec
+
+\newcommand{\bA}{\mathbf{A}}    % A, mat
+\newcommand{\bI}{\mathbf{I}}    % A, mat
+\newcommand{\bN}{\mathbf{N}}    % n, mat
+\newcommand{\bT}{\mathbf{T}}    % T, mat
+\newcommand{\bU}{\mathbf{U}}    % U, mat
+\newcommand{\bV}{\mathbf{V}}    % V, mat
+\newcommand{\bQ}{\mathbf{Q}}    % Q, mat
+\newcommand{\bX}{\mathbf{X}}    % X, mat
+
+\newcommand{\bc}{\bm{c}}    % c, vec
+\newcommand{\be}{\bm{e}}    % e, vec
+\newcommand{\bu}{\bm{u}}    % u, vec
+\newcommand{\bv}{\bm{v}}    % v, vec
+\newcommand{\bw}{\bm{w}}    % w, vec
+\newcommand{\bt}{\bm{t}}    % t, vec
+\newcommand{\bx}{\bm{x}}    % x, vec
+\newcommand{\by}{\bm{y}}    % y, vec
+\newcommand{\bz}{\bm{z}}    % z, vec
+
+\newcommand{\phib}{\bm{\phi}}    % phi, vec
+\newcommand{\psib}{\bm{\psi}}    % psi, vec
+\newcommand{\dtm}{\mathbf{B}}    %
+\newcommand{\dtmt}{\tilde{\dtm}}    %
+\newcommand{\Ab}{\mathbf{A}}    % A mat
+\newcommand{\Kb}{\mathbf{K}}    % K mat
+\newcommand{\Ib}{\mathbf{I}}    % I mat
+
+
+
+\newcommand{\rvby}{\bm{\mathsf{y}}}    % y, rv. vec
+\newcommand{\rvbx}{\bm{\mathsf{x}}}    % x, rv. vec
+% \newcommand{\bm}{\bm{m}}    % m, vec
+\newcommand{\bzero}{\bm{0}}    % 0, vec
+
+\newcommand{\balpha}{\bm{\alpha}}    % alpha, vec
+\newcommand{\bphi}{\bm{\phi}}    % phi, vec
+\newcommand{\bpsi}{\bm{\psi}}    % psi, vec
+\newcommand{\bxi}{\bm{\xi}}    % xi, vec
+\newcommand{\btheta}{\bm{\theta}}    % theta, vec
+\newcommand{\bmu}{\bm{\mu}}    % mu, vec
+
+\newcommand{\bLambda}{\bm{\Lambda}}    % Sigma, mat
+\newcommand{\bSigma}{\bm{\Sigma}}    % Sigma, mat
+
+\newcommand{\cF}{\mathcal{F}}  
+\newcommand{\cL}{\mathcal{L}}  
+\newcommand{\cX}{\mathcal{X}}  
+\newcommand{\cY}{\mathcal{Y}}  
+
+\newcommand{\rvx}{\mathsf{x}}    % x, r.v.
+\newcommand{\rvy}{\mathsf{y}}    % y, r.v.
+\newcommand{\rvz}{\mathsf{z}}    % z, r.v.
+\newcommand{\rvw}{\mathsf{w}}    % w, r.v.
+\newcommand{\rvv}{\mathsf{v}}    % v, r.v.
+\newcommand{\rvm}{\mathsf{m}}    % m, r.v.
+\newcommand{\rvt}{\mathsf{t}}    % t, r.v.
+\newcommand{\rvH}{\mathsf{H}}    % H, r.v.
+\newcommand{\urvx}{\underline{\mathsf{x}}}    % x, r.v. vec
+\newcommand{\urvy}{\underline{\mathsf{y}}}    % y, r.v. vec
+\newcommand{\urvz}{\underline{\mathsf{z}}}    % z, r.v. vec
+\newcommand{\urvw}{\underline{\mathsf{w}}}    % w, r.v. vec
+\newcommand{\urvt}{\underline{\mathsf{t}}}    % t, r.v. vec
+
+
+\newcommand{\defeq}{\triangleq} %\coloneqq
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\T}{\mathrm{T}}    % transpose
+\newcommand{\F}{\mathrm{F}}    % Frobenius
+\newcommand{\BLS}{\mathrm{BLS}}    % BLS
+\newcommand{\LLS}{\mathrm{LLS}}    % LLS
+\newcommand{\MVU}{\mathrm{MVU}}    % MVU
+\newcommand{\dd}{\mathrm{d}}  
+
+\DeclareMathOperator*{\maximize}{maximize}    % maximize
+\DeclareMathOperator*{\minimize}{minimize}    % minimize
+\newcommand{\st}{\mathrm{subject~to}}    % minimize
+
+% \newcommand{\E}[1]{\mathbb{E}\left[{#1}\right]}
+% \newcommand{\Prob}[1]{\mathbb{P}\left({#1}\right)}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argsup}{arg\,sup}
+\DeclareMathOperator*{\arginf}{arg\,inf}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\Cov}{Cov}
+\DeclareMathOperator{\var}{var}
+\DeclareMathOperator{\cov}{cov}
+\DeclareMathOperator{\MSE}{MSE}
+\DeclareMathOperator{\1}{\mathds{1}} % dsfont required
+\DeclareMathOperator{\E}{\mathbb{E}}
+\DeclareMathOperator{\Prob}{\mathbb{P}}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\Bern}{Bern}
+\DeclareMathOperator{\Binom}{Binom}
+
+\newcommand\independent{\protect\mathpalette{\protect\independenT}{\perp}}
+\def\independenT#1#2{\mathrel{\rlap{$#1#2$}\mkern2mu{#1#2}}}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "ithw"
+%%% End:

@@ -1,10 +1,10 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.3.23)  30 SEP 2020 20:08
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.3.23)  23 OCT 2020 17:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**ithw.tex
-(./ithw.tex
+**ithw3.tex
+(./ithw3.tex
 LaTeX2e <2018-12-01>
 (/usr/local/texlive/2018/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2018/09/03 v1.4i Standard LaTeX document class
@@ -212,6 +212,108 @@ File: xetex.def 2017/06/24 v5.0h Graphics/color driver for xetex
 ))
 \Gin@req@height=\dimen122
 \Gin@req@width=\dimen123
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2018/11/30 v6.88e Hypertext links for LaTeX
+ (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
+ (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
+Package hobsub Info: Skipping package `infwarerr' (already loaded).
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+Package hobsub Info: Skipping package `intcalc' (already loaded).
+Package: ifpdf 2018/09/07 v3.3 Provides the ifpdf switch
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+Package: pdftexcmds 2018/09/10 v0.29 Utility functions of pdfTeX for LuaTeX (HO)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: pdfTeX >= 1.30 not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode not found.
+Package: pdfescape 2016/05/16 v1.14 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2016/05/16 v1.4 Expandable calculations on big integers (HO)
+Package: bitset 2016/05/16 v1.2 Handle bit-vector datatype (HO)
+Package: uniquecounter 2016/05/16 v1.3 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2016/05/16 v1.5 Let assignment for LaTeX macros (HO)
+Package: hopatch 2016/05/16 v1.3 Wrapper for package hooks (HO)
+Package: xcolor-patch 2016/05/16 xcolor patch
+Package: atveryend 2016/05/16 v1.9 Hooks at the very end of document (HO)
+Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
+Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
+Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
+) (/usr/local/texlive/2018/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/auxhook.sty
+Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+)
+\@linkdim=\dimen124
+\Hy@linkcounter=\count118
+\Hy@pagecounter=\count119
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2018/11/30 v6.88e Hyperref: PDFDocEncoding definition (HO)
+)
+\Hy@SavedSpaceFactor=\count120
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Hyper figures OFF on input line 4519.
+Package hyperref Info: Link nesting OFF on input line 4524.
+Package hyperref Info: Hyper index ON on input line 4527.
+Package hyperref Info: Plain pages OFF on input line 4534.
+Package hyperref Info: Backreferencing OFF on input line 4539.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4772.
+\c@Hy@tempcnt=\count121
+LaTeX Info: Redefining \url on input line 5125.
+\XeTeXLinkMargin=\dimen125
+\Fld@menulength=\count122
+\Field@Width=\dimen126
+\Fld@charsize=\dimen127
+Package hyperref Info: Hyper figures OFF on input line 6380.
+Package hyperref Info: Link nesting OFF on input line 6385.
+Package hyperref Info: Hyper index ON on input line 6388.
+Package hyperref Info: backreferencing OFF on input line 6395.
+Package hyperref Info: Link coloring OFF on input line 6400.
+Package hyperref Info: Link coloring with OCG OFF on input line 6405.
+Package hyperref Info: PDF/A mode OFF on input line 6410.
+LaTeX Info: Redefining \ref on input line 6450.
+LaTeX Info: Redefining \pageref on input line 6454.
+\Hy@abspage=\count123
+\c@Item=\count124
+\c@Hfootnote=\count125
+)
+Package hyperref Info: Driver (autodetected): hxetex.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/hxetex.def
+File: hxetex.def 2018/11/30 v6.88e Hyperref driver for XeTeX
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2018/11/30 v6.88e Hyperref: PDF Unicode definition (HO)
+) (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/stringenc.sty
+Package: stringenc 2016/05/16 v1.11 Convert strings between diff. encodings (HO)
+)
+\pdfm@box=\box30
+\c@Hy@AnnotLevel=\count126
+\HyField@AnnotCount=\count127
+\Fld@listcount=\count128
+\c@bookmark@seq@number=\count129
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 282.
+)
+\Hy@SectionHShift=\skip54
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/caption/subcaption.sty
 Package: subcaption 2018/05/01 v1.1-162 Sub-captions (AR)
  (/usr/local/texlive/2018/texmf-dist/tex/latex/caption/caption.sty
@@ -219,38 +321,39 @@ Package: caption 2018/10/06 v3.3-154 Customizing captions (AR)
  (/usr/local/texlive/2018/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2018/09/12 v1.8c caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 64.
-\captionmargin=\dimen124
-\captionmargin@=\dimen125
-\captionwidth=\dimen126
-\caption@tempdima=\dimen127
-\caption@indent=\dimen128
-\caption@parindent=\dimen129
-\caption@hangindent=\dimen130
+\captionmargin=\dimen128
+\captionmargin@=\dimen129
+\captionwidth=\dimen130
+\caption@tempdima=\dimen131
+\caption@indent=\dimen132
+\caption@parindent=\dimen133
+\caption@hangindent=\dimen134
 )
-\c@caption@flags=\count118
-\c@ContinuedFloat=\count119
+\c@caption@flags=\count130
+\c@ContinuedFloat=\count131
+Package caption Info: hyperref package is loaded.
 )
-\c@subfigure=\count120
-\c@subtable=\count121
+\c@subfigure=\count132
+\c@subtable=\count133
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2016/04/27 v1.618033 publication quality tables
-\heavyrulewidth=\dimen131
-\lightrulewidth=\dimen132
-\cmidrulewidth=\dimen133
-\belowrulesep=\dimen134
-\belowbottomsep=\dimen135
-\aboverulesep=\dimen136
-\abovetopsep=\dimen137
-\cmidrulesep=\dimen138
-\cmidrulekern=\dimen139
-\defaultaddspace=\dimen140
-\@cmidla=\count122
-\@cmidlb=\count123
-\@aboverulesep=\dimen141
-\@belowrulesep=\dimen142
-\@thisruleclass=\count124
-\@lastruleclass=\count125
-\@thisrulewidth=\dimen143
+\heavyrulewidth=\dimen135
+\lightrulewidth=\dimen136
+\cmidrulewidth=\dimen137
+\belowrulesep=\dimen138
+\belowbottomsep=\dimen139
+\aboverulesep=\dimen140
+\abovetopsep=\dimen141
+\cmidrulesep=\dimen142
+\cmidrulekern=\dimen143
+\defaultaddspace=\dimen144
+\@cmidla=\count134
+\@cmidlb=\count135
+\@aboverulesep=\dimen145
+\@belowrulesep=\dimen146
+\@thisruleclass=\count136
+\@lastruleclass=\count137
+\@thisrulewidth=\dimen147
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/eucal.sty
 Package: eucal 2009/06/22 v3.00 Euler Script fonts
 LaTeX Font Info:    Overwriting math alphabet `\EuScript' in version `bold'
@@ -353,76 +456,103 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count126
-\lst@gtempboxa=\box30
+\lst@mode=\count138
+\lst@gtempboxa=\box31
 \lst@token=\toks29
-\lst@length=\count127
-\lst@currlwidth=\dimen144
-\lst@column=\count128
-\lst@pos=\count129
-\lst@lostspace=\dimen145
-\lst@width=\dimen146
-\lst@newlines=\count130
-\lst@lineno=\count131
-\lst@maxwidth=\dimen147
+\lst@length=\count139
+\lst@currlwidth=\dimen148
+\lst@column=\count140
+\lst@pos=\count141
+\lst@lostspace=\dimen149
+\lst@width=\dimen150
+\lst@newlines=\count142
+\lst@lineno=\count143
+\lst@maxwidth=\dimen151
  (/usr/local/texlive/2018/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2018/09/02 1.7 (Carsten Heinz)
-\c@lstnumber=\count132
-\lst@skipnumbers=\count133
-\lst@framebox=\box31
+\c@lstnumber=\count144
+\lst@skipnumbers=\count145
+\lst@framebox=\box32
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2018/09/02 1.7 listings configuration
 ))
 Package: listings 2018/09/02 1.7 (Carsten Heinz)
-\netBracketCount@mlpr=\count134
-\blkLvl@mlpr=\count135
-\blkLvlAtClassdef@mlpr=\count136
-\emHeight@mlpr=\skip54
-\jayDepth@mlpr=\skip55
-\sectionRuleOffset@mlpr=\skip56
+\netBracketCount@mlpr=\count146
+\blkLvl@mlpr=\count147
+\blkLvlAtClassdef@mlpr=\count148
+\emHeight@mlpr=\skip55
+\jayDepth@mlpr=\skip56
+\sectionRuleOffset@mlpr=\skip57
 \toks@mlpr=\toks30
-) (./itdef.tex) (./ithw.aux)
-\openout1 = `ithw.aux'.
+) (./itdef.tex) (./ithw3.aux
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 28.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 28.
+LaTeX Warning: Label `eq:gamma' multiply defined.
+
+
+LaTeX Warning: Label `eq:gamma' multiply defined.
+
+)
+\openout1 = `ithw3.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 29.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 29.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    ... okay on input line 29.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/fmtcount/fc-english.def
 Invalid UTF-8 byte or sequence at line 10 replaced by U+FFFD.
 Invalid UTF-8 byte or sequence at line 22 replaced by U+FFFD.
 File: fc-english.def 2016/01/12
 )
+\AtBeginShipoutBox=\box33
+Package hyperref Info: Link coloring OFF on input line 29.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
+ (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
+)
+\c@section@level=\count149
+)
+LaTeX Info: Redefining \ref on input line 29.
+LaTeX Info: Redefining \pageref on input line 29.
+LaTeX Info: Redefining \nameref on input line 29.
+ (./ithw3.out) (./ithw3.out)
+\@outlinefile=\write3
+\openout3 = `ithw3.out'.
+
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count137
-\c@hwcnt=\count138
-LaTeX Font Info:    Try loading font information for U+msa on input line 37.
+\c@lstlisting=\count150
+\c@hwcnt=\count151
+LaTeX Font Info:    Try loading font information for U+msa on input line 38.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 37.
+LaTeX Font Info:    Try loading font information for U+msb on input line 38.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for TS1+lmr on input line 54.
+LaTeX Font Info:    Try loading font information for TS1+lmr on input line 55.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -430,69 +560,88 @@ LaTeX Font Info:    Try loading font information for T1+lmtt on input line 56.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-Overfull \hbox (56.68092pt too wide) detected at line 88
-[][]
- []
-
-[1
-
-] [2]
-LaTeX Font Info:    Try loading font information for U+eus on input line 202.
+LaTeX Font Info:    Try loading font information for U+eus on input line 78.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/ueus.fd
 File: ueus.fd 2013/01/14 v3.01 Euler Script
 )
-Overfull \hbox (47.31721pt too wide) detected at line 208
-[][]
+Overfull \hbox (115.19878pt too wide) detected at line 84
+[][][][]
+ []
+
+(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/se-ascii-print.def
+File: se-ascii-print.def 2016/05/16 v1.11 stringenc: Printable ASCII characters
+) [1
+
+]
+Missing character: There is no ， in font ec-lmr10!
+Missing character: There is no ， in font ec-lmr10!
+
+Overfull \hbox (129.35297pt too wide) detected at line 147
+[][][][]
+ []
+
+[2]
+Overfull \hbox (15.84381pt too wide) detected at line 215
+[][][][]
+ []
+
+[3] [4]
+Overfull \hbox (46.07816pt too wide) detected at line 328
+[][][] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 f\OT1/cmr/m/n/10 ([]) = []
+ []
+
+File: decision-plane.png Graphic file (type bmp)
+<decision-plane.png>
+[5] [6]
+Overfull \hbox (110.43474pt too wide) detected at line 463
+[][][][]
  []
 
 
-Overfull \hbox (47.87862pt too wide) detected at line 220
-[][]
- []
-
-[3]
-Overfull \hbox (50.5071pt too wide) detected at line 230
-[][]
+Overfull \hbox (45.2171pt too wide) detected at line 472
+[][][][]
  []
 
 
-Overfull \hbox (102.74254pt too wide) detected at line 238
-[][]
+Overfull \hbox (46.06035pt too wide) detected at line 482
+[][]\OML/cmm/m/it/10 p\OT1/cmr/m/n/10 ([] = 1\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 y[]\OT1/cmr/m/n/10 ) = []
+ []
+
+[7]
+Overfull \hbox (27.69588pt too wide) detected at line 492
+[][][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 y[]\OT1/cmr/m/n/10 ) = []
  []
 
 
-Overfull \hbox (1.35548pt too wide) detected at line 248
-[][]
+Overfull \hbox (58.01408pt too wide) detected at line 512
+[][] [] \OML/cmm/m/it/10 p[]\OT1/cmr/m/n/10 ([]\OML/cmm/m/it/10 ; x\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 p[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 y[]\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 ) [] \OML/cmm/m/it/10 < \OT1/cmr/m/n/10 0 \OMS/cmsy/m/n/10 ([]) [] \OML/cmm/m/it/10 > ^^M[]
  []
 
-
-Overfull \hbox (124.74251pt too wide) detected at line 255
-[][]
+[8]
+Overfull \hbox (107.0482pt too wide) detected at line 553
+[][][][]
  []
 
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 580.
+[9]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 580.
+ (./ithw3.aux)
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 580.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 580.
+Package rerunfilecheck Info: File `ithw3.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E.
 
-Overfull \hbox (38.68146pt too wide) detected at line 279
-[][]
- []
 
-[4] [5]
-Overfull \hbox (22.87617pt too wide) detected at line 334
-\OML/cmm/m/it/10 P\OT1/cmr/m/n/10 (\OML/cmm/b/it/10 X \OMS/cmsy/m/n/10 j \OML/cmm/b/it/10 Y\OT1/cmr/m/n/10 ) = []
- []
+LaTeX Warning: There were multiply-defined labels.
 
-[6]
-Overfull \hbox (77.40973pt too wide) detected at line 401
-[][]
- []
-
-[7] (./ithw.aux) ) 
+ ) 
 Here is how much of TeX's memory you used:
- 7607 strings out of 492933
- 111116 string characters out of 6133145
- 213674 words of memory out of 5000000
- 11511 multiletter control sequences out of 15000+600000
- 31403 words of font info for 44 fonts, out of 8000000 for 9000
+ 14557 strings out of 492933
+ 211553 string characters out of 6133145
+ 323267 words of memory out of 5000000
+ 18406 multiletter control sequences out of 15000+600000
+ 31763 words of font info for 45 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 59i,14n,118p,818b,456s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 59i,11n,118p,819b,760s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on ithw.xdv (7 pages, 29988 bytes).
+Output written on ithw3.xdv (9 pages, 48392 bytes).
