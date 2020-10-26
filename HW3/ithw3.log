@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.3.23)  23 OCT 2020 17:49
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.3.23)  26 OCT 2020 21:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -602,12 +602,12 @@ Overfull \hbox (45.2171pt too wide) detected at line 472
 [][][][]
  []
 
-
+[7]
 Overfull \hbox (46.06035pt too wide) detected at line 482
 [][]\OML/cmm/m/it/10 p\OT1/cmr/m/n/10 ([] = 1\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 y[]\OT1/cmr/m/n/10 ) = []
  []
 
-[7]
+
 Overfull \hbox (27.69588pt too wide) detected at line 492
 [][][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 y[]\OT1/cmr/m/n/10 ) = []
  []
@@ -644,4 +644,4 @@ Here is how much of TeX's memory you used:
  1348 hyphenation exceptions out of 8191
  59i,11n,118p,819b,760s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on ithw3.xdv (9 pages, 48392 bytes).
+Output written on ithw3.xdv (9 pages, 48452 bytes).

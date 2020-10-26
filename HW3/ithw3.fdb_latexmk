@@ -1,9 +1,9 @@
 # Fdb version 3
-["xdvipdfmx"] 1603446570 "ithw3.xdv" "ithw3.pdf" "ithw3" 1603446571
-  "ithw3.xdv" 1603446570 48392 405d4f8a97cd72389ba657619aa08c3c "xelatex"
+["xdvipdfmx"] 1603720425 "ithw3.xdv" "ithw3.pdf" "ithw3" 1603720426
+  "ithw3.xdv" 1603720425 48452 b9a9c8acd098390258edb9dab504c5ef "xelatex"
   (generated)
   "ithw3.pdf"
-["xelatex"] 1603446569 "ithw3.tex" "ithw3.xdv" "ithw3" 1603446571
+["xelatex"] 1603720423 "ithw3.tex" "ithw3.xdv" "ithw3" 1603720426
   "/usr/local/texlive/2018/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/local/texlive/2018/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1480098689 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/usr/local/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm" 1480098698 1120 1e8878807317373affa7f7bba4cf2f6a ""
@@ -112,11 +112,11 @@
   "/usr/local/texlive/2018/texmf.cnf" 1523934483 577 0b39adfd7c93507ff20c9c14c2f1a33f ""
   "decision-plane.png" 1603368535 348770 5c626283dc96babce469c78eafecbf33 ""
   "itdef.tex" 1600094570 4501 7af1341a22ddc14e210d76bab50da7b3 ""
-  "ithw3.aux" 1603446570 1227 8f250108f8b78d357596e5804e620573 ""
-  "ithw3.out" 1603446570 0 d41d8cd98f00b204e9800998ecf8427e ""
-  "ithw3.tex" 1603446569 25521 3c7fa4b7b6a8c2d88f345e7e67412e47 ""
+  "ithw3.aux" 1603720425 1227 908dccc81b677373af288e83dcd85cb0 ""
+  "ithw3.out" 1603720424 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "ithw3.tex" 1603720421 25538 6ac33f63c43efcc30b0758480d902bbf ""
   (generated)
-  "ithw3.out"
   "ithw3.xdv"
-  "ithw3.log"
   "ithw3.aux"
+  "ithw3.out"
+  "ithw3.log"
