@@ -287,7 +287,91 @@ where $\sum_{i=1}^m p_i = 1$.
   \end{figure}
 \end{enumerate}
 
+
+\item \begin{enumerate}
+  \item $\forall p \in \mathcal{P}$\begin{equation}
+    D(q\| p) = \sum_{x=0}^{\infty} q(x) \log \frac{q(x)}{p(x)}
+  \end{equation}
+  For $x\geqslant M$, $q(x)>0,q(x)=0,q(x) \log \frac{q(x)}{p(x)} = \infty$, so $D(q\| p) = \infty$
+
+  \item $\forall p \in \mathcal{P}$\begin{equation}
+    D(p\| q) = \sum_{x=0}^{\infty} p(x) \log \frac{p(x)}{q(x)}
+  \end{equation}
+  For $x\geqslant M$, $q(x)>0,q(x)=0,p(x) \log \frac{p(x)}{q(x)} = 0$. 
+  For $x <M$, $p(x) \log \frac{p(x)}{q(x)} < \infty$, so $D(p\| q) < \infty$
+
+  \item To find the I-projection,\begin{equation}
+    \begin{aligned}
+      &\min \quad & \sum_{i=0}^{M-1} p_i\log \frac{p_i}{q_i} \\
+      &\text{s.t.} \quad & \sum_{i=0}^{M-1} p_i= 1
+    \end{aligned}
+  \end{equation}
+
+  Using Lagrange Multiplier,
+
+  \begin{equation}
+    L = \sum_{i=0}^{M-1} p_i\log \frac{p_i}{q_i}  + \lambda (\sum_{i=0}^{M-1} p_i -1)
+  \end{equation}
+
+  \begin{equation}
+    \frac{\partial L}{\partial p_i} = 1 + \log \frac{p_i}{q_i}+  \lambda = 0,\quad  i = 0,1,2,\cdot,M-1
+  \end{equation}
+
+  So 
+  \begin{equation}
+    p_i = \frac{q_i}{\sum_{j=0}^{M-1} q_i} = \frac{q_i}{ Q(M-1)}
+  \end{equation}
+
+  And
+
+  \begin{equation}
+    D(p^*\| q) = \sum_{i=0}^{M-1} p_i\log \frac{p_i}{q_i} = - \log Q(M-1)
+  \end{equation}
+
+  \item \begin{equation}
+    \begin{aligned}
+      &\min \quad & \sum_{i=0}^{\infty} p_i\log \frac{p_i}{q_i} \\
+      &\text{s.t.} \quad & \sum_{i=0}^{M-1} p_i= 1-\varepsilon, \\
+      &  & \sum_{i=M}^{\infty} p_i= \varepsilon
+    \end{aligned}
+  \end{equation}
+
+  Using Lagrange Multiplier,
+
+  \begin{equation}
+    L = \sum_{i=0}^{\infty} p_i\log \frac{p_i}{q_i}  + \lambda (\sum_{i=0}^{M-1} p_i -1+\varepsilon) + \mu(\sum_{i=M}^{\infty} p_i -\varepsilon)
+  \end{equation}
+
+  \begin{equation}
+    \begin{aligned}
+      &\frac{\partial L}{\partial p_i} = 1 + \log \frac{p_i}{q_i}+  \lambda = 0,\quad  i = 0,1,2,\cdot,M-1 \\
+      & \frac{\partial L}{\partial p_i} = 1 + \log \frac{p_i}{q_i}+  \mu = 0,\quad  i = M,\cdot
+    \end{aligned}
+  \end{equation}
+
+  So \begin{equation}
+    p_i = \left\{\begin{aligned}
+      &\frac{(1-\varepsilon)q_i}{ Q(M-1)},\quad i = 0,1,2,\cdot,M-1\\
+      &\frac{\varepsilon q_i}{ 1-Q(M-1)},\quad i = M,\cdots
+    \end{aligned}\right.
+  \end{equation}
+
+  And \begin{equation}
+    D(p^*_{\varepsilon}\| q) = (1-\varepsilon) \log \frac{1-\varepsilon}{ Q(M-1)} + \varepsilon \log \frac{\varepsilon}{ 1-Q(M-1)}
+  \end{equation}
+
+  \begin{equation}
+    \lim_{\varepsilon \to 0 }  D(p^*_{\varepsilon}\| q) =  - \log  Q(M-1) = D(p^* \| q)
+  \end{equation}
+
+  \item Define a indication function $f(\mathrm{y}) = \mathbf{1}(\mathrm{y} \geqslant M)$, then $\mathcal{P}_{\varepsilon} = \{p: \mathbb{E}_{p}[f(\mathrm{y})] = \epsilon\}$ is a linear family.
   
+  \item Because $\mathcal{P}_{\varepsilon}$ is a linear family, the I-projection $p_{\epsilon}^*$ belongs to a exponential family $\mathcal{E} = \{\tilde{q} = qe^{sf(y) - \alpha(s)}\}$. And because $f(y) = \mathbf{1}(\mathrm{y} \geqslant M)$. So $\tilde{q}_i  =  e^{-\alpha(s)} q_i, i =0,1,\cdots,M-1$ and $\tilde{q}_i  =  e^{s-\alpha(s)} q_i, i =M,\cdots$. Comparing with the result in (4), the corresponding parameter \begin{equation}
+    s^* = \log \frac{\varepsilon Q(M-1)}{(1-\varepsilon)(1-Q(M-1))}
+  \end{equation}
+  
+\end{enumerate}
+
 \end{enumerate}
   
 

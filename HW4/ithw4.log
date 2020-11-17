@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.3.23)  17 NOV 2020 16:13
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.3.23)  17 NOV 2020 19:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -466,7 +466,7 @@ File: 3-5.jpg Graphic file (type bmp)
  [4] [5]
 File: 3-6.jpg Graphic file (type bmp)
 <3-6.jpg>
- [6] (./ithw4.aux) ) 
+ [6] [7] [8] (./ithw4.aux) ) 
 Here is how much of TeX's memory you used:
  7637 strings out of 492933
  111458 string characters out of 6133145
@@ -476,4 +476,4 @@ Here is how much of TeX's memory you used:
  1348 hyphenation exceptions out of 8191
  59i,13n,118p,819b,613s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on ithw4.xdv (6 pages, 20504 bytes).
+Output written on ithw4.xdv (8 pages, 26608 bytes).
