@@ -1,0 +1,227 @@
+% Homework template for Information Theory and Statistical Learning
+% by Xiangxiang Xu <xiangxiangxu.thu@gmail.com>
+% LAST UPDATE: Oct 3, 2019
+\documentclass[a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amssymb, amsthm}
+% amsmath: equation*, amssymb: mathbb, amsthm: proof
+\usepackage{moreenum}
+\usepackage{mathtools}
+\usepackage{url}
+\usepackage{enumitem}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{booktabs} % toprule
+\usepackage[mathcal]{eucal}
+\usepackage{dsfont}
+\usepackage[numbered,framed]{matlab-prettifier}
+\input{itdef}
+
+\lstset{
+  style              = Matlab-editor,
+  captionpos         =b,
+  basicstyle         = \mlttfamily,
+  escapechar         = ",
+  mlshowsectionrules = true,
+}
+\begin{document}
+\courseheader
+
+\newcounter{hwcnt}
+\setcounter{hwcnt}{4} % set to the times of Homework
+
+\begin{center}
+  \underline{\bf Homework \thehwcnt} \\
+\end{center}
+\begin{flushleft}
+  \textcolor{gray}{Hanmo Chen}\hfill
+  \today
+\end{flushleft}
+\hrule
+
+\vspace{2em}
+\setlist[enumerate,1]{label=\thehwcnt.\arabic*.}
+\setlist[enumerate,2]{label=(\alph*)}
+\setlist[enumerate,3]{label=\roman*.}
+\setlist[enumerate,4]{label=\greek*)}
+
+\flushleft
+\rule{\textwidth}{1pt}
+\begin{itemize}
+\item {\bf Acknowledgments: \/ For Problem 1, I refer to \url{ https://en.wikipedia.org/wiki/Incomplete_gamma_function} for Incomplete Gamma function} 
+  \textcolor{gray}{None}
+\item {\bf Collaborators: \/}
+  \textcolor{gray}{I finish this homework by myself.} 
+\item  \emph{I certify that all solutions are entirely in my words and that I have not looked at another student's solutions. I have credited all external sources in this write up.}
+  \framebox[\linewidth]{\rule{0pt}{10pt}\textcolor{gray}{\large Hanmo Chen}}
+\end{itemize}
+\rule{\textwidth}{1pt}
+
+
+\vspace{2em}
+
+
+
+\begin{enumerate}
+  \setlength{\itemsep}{3\parskip}
+
+\item \begin{enumerate}
+\item 
+
+  Because $\mathrm{x}_i \overset{i.i.d.}{\sim} \mathcal{N}(0,\sigma^2)$, $\mathrm{y} = \sum\limits_{i=1}^{n} \frac{\mathrm{x}_i^2}{\sigma^2} \sim \chi^2_{n}$. $\mathbb{P}(Y\geqslant n\alpha^2 /\sigma^2 ) = \frac{\Gamma(\frac{n}{2},\frac{n\alpha^2}{2\sigma^2})}{\Gamma(\frac{n}{2})}$ where $\Gamma(s,x)$ denotes the upper Incomplete Gamma function.
+
+So 
+
+\begin{equation}
+  \begin{aligned}
+    -\frac{1}{n} \log \mathbb{P}(\frac{1}{n} \sum_{i=1}^n \mathrm{x}_i^2 \geqslant \alpha^2) =  -\frac{1}{n} \log \mathbb{P}(Y\geqslant \frac{n\alpha^2}{\sigma^2}) \\ = -\frac{1}{n} \log \frac{\Gamma(\frac{n}{2},\frac{n\alpha^2}{2\sigma^2})}{\Gamma(\frac{n}{2})}
+  \end{aligned}
+\end{equation}
+
+To find the asymptotic property, using Sanov's theorem,
+\begin{equation}
+  \begin{aligned}
+    \lim_{n \to \infty}-\frac{1}{n} \log \mathbb{P}(\frac{1}{n} \sum_{i=1}^n \mathrm{x}_i^2 \geqslant \alpha^2) = \inf_{\mathbb{E}_P[X^2] \geqslant \alpha^2} D(P\| \mathcal{N}(0,\sigma^2))
+  \end{aligned}
+\end{equation}
+%   \item 
+
+Suppose the distribution $P$ has pdf $f(x)$, it can be seen as an optimization problem with constraints, that is,
+
+\begin{equation}
+  \begin{aligned}
+    &\min \quad & D(P\| \mathcal{N}(0,\sigma^2)) = \int f(x) \log{\frac{f(x)}{\frac{1}{\sqrt{2\pi \sigma^2}}e^{-\frac{x^2}{2\sigma^2}}} } \\
+    & \text{s.t.} & \int f(x) x^2  \geqslant \alpha^2 \\
+    & &\int f(x)= 1
+  \end{aligned}
+\end{equation}
+
+Define 
+
+\begin{equation}
+  J(f) = \int f(x) \log{\frac{f(x)}{\frac{1}{\sqrt{2\pi \sigma^2}}e^{-\frac{x^2}{2\sigma^2}}} } + \lambda (\int f(x) x^2  - \alpha^2) + \mu(\int f(x) -1)
+\end{equation}
+
+
+And let $\frac{\partial J}{\partial f} = 0$ we have 
+
+\begin{equation}
+  \frac{\partial J}{\partial f} = \log f(x)  + \lambda x^2 + \mu = 0
+\end{equation}
+
+So $f(x) = \exp^{-\mu -\lambda x^2}$, which is normal distribution and satisfies $\mathbb{E}[X^2] \geqslant \alpha^2$. So $P^* = \mathcal{N}(0,\alpha^2)$ and 
+
+\begin{equation}
+  \begin{aligned}
+    \lim_{n \to \infty}-\frac{1}{n} \log \mathbb{P}(\frac{1}{n} \sum_{i=1}^n \mathrm{x}_i^2 \geqslant \alpha^2) & =  D(P^*\| \mathcal{N}(0,\sigma^2))  \\& = \int_{\mathbb{R}} f(x) \log{\frac{\frac{1}{\sqrt{2\pi \alpha^2}}e^{-\frac{x^2}{2\alpha^2}}}{\frac{1}{\sqrt{2\pi \sigma^2}}e^{-\frac{x^2}{2\sigma^2}}} dx} \\
+    & = \ln \frac{\sigma}{\alpha} + \frac{1}{2}(\frac{\alpha^2}{\sigma^2}-1)
+  \end{aligned}
+\end{equation}
+
+\item Using the conclusion from (a), $P^* = \mathcal{N}(0,\alpha^2)$.
+
+\end{enumerate}
+
+
+\item \begin{enumerate}
+  \item To prove the following lemma, 
+
+\begin{equation}
+  \left(\frac{n}{e}\right)^{n} \leqslant n ! \leqslant n\left(\frac{n}{e}\right)^{n}
+\end{equation}
+
+Which is equivalent to,
+
+\begin{equation}
+  n\ln n - n \leqslant \ln(n!) \leqslant (n+1)\ln n - n
+\end{equation}
+
+For the left part, notice that $\ln(1+\frac 1 {i})< \frac{1}{i}$ for $i\geqslant 1$ which leads to,
+
+\begin{equation}
+  (i+1) \ln(i+1) - i\ln i -1 < \ln(i+1)
+\end{equation}
+
+Sum for $i=1,2,\cdots,n-1$, we have 
+
+\begin{equation}
+  n\ln n - (n-1) < \sum_{i=1}^{n-1} \ln(i+1) = \ln (n!)
+\end{equation}
+
+For the right part, it holds only when $n\geqslant 7$. It is easy to check $n =7 $. So $\ln(7!) \leqslant 8\ln 7 - 7$
+
+And for $n \geqslant 8$, because $\ln (1+x) > \frac{x}{x+1}$ for $x>0$, $\ln (1+ \frac 1 i ) > \frac{1}{i+1}$, $\ln i < (i+1)\ln (i+1) - i \ln i -1$ . 
+
+Sum for $i=7,\cdots, n-1$
+
+\begin{equation}
+  \ln(6!)  + \sum_{i=7}^{n-1} \ln i + \ln n < 7\ln 7 - 7  + n\ln n + - 7\ln  7 + \ln n  - (n-7) = (n+1) \ln n - n
+\end{equation}
+
+So 
+
+\begin{equation}
+  \left(\frac{n}{e}\right)^{n} \leqslant n ! \leqslant n\left(\frac{n}{e}\right)^{n}
+\end{equation}
+
+\item From (a) we have that as $n \to \infty$,
+\begin{equation}
+  \frac{\ln (n!)}{n} \sim \ln \frac{n}{e}
+\end{equation}
+
+Therefore
+\begin{equation}
+  \begin{aligned}
+    \lim _{n \to \infty} \frac{1}{n} \log \binom{n}{k} & = \lim _{n \to \infty} \frac{1}{n} \log \frac{n!}{k!(n-k)!}  \\ & = \lim _{n \to \infty} \log \frac{n}{e} - p \log \frac{pn}{e} - (1-p) \log \frac{(1-p)n}{e} \\
+    & = -p\log p - (1-p) \log (1-p) = H(p)
+  \end{aligned}
+\end{equation}
+
+Another explanation using Sanov's theorem, suppose $X_1,X_2,\cdots,X_n \overset{i.i.d}{\sim} Bernoulli(\frac{1}{2})$ consider 
+
+\begin{equation}
+  \lim_{n\to \infty} -\frac{1}{n} \log \mathbb{P}(\frac{1}{n} \sum_{i=1}^n X_i= p) 
+\end{equation}
+
+On the one hand, $\sum_{i=1}^n X_i \sim Binomial(n,\frac 1 2)$, so 
+
+\begin{equation}
+  \lim_{n\to \infty} -\frac{1}{n} \log \mathbb{P}(\frac{1}{n} \sum_{i=1}^n X_i= p) = \lim_{n\to \infty} -\frac{1}{n} \log \left[\binom{n}{k} \frac 1 {2^n}\right]  = 1 - \lim_{n\to \infty} \frac{1}{n} \log \binom{n}{k}
+\end{equation}
+
+On the other hand, using Sanov's theorem,
+
+\begin{equation}
+  \begin{aligned}
+    \lim_{n\to \infty} -\frac{1}{n} \log \mathbb{P}(\frac{1}{n} \sum_{i=1}^n X_i= p)   & = D(Bernoulli(p) \| Bernoulli(\frac 1 2)) \\ & = p\log 2p + (1-p) \log(2(1-p))  \\ & = 1 + p\log p  + (1-p) \log (1-p)  \\ & = 1- H(p)
+  \end{aligned}
+\end{equation}
+
+Also we can get 
+
+\begin{equation}
+  \lim_{n\to \infty} \frac{1}{n} \log \binom{n}{k} = H(p)
+\end{equation}
+
+
+Using the same way but using categorical and multinomial distribution instead of Bernoulli and  bionomial distribution.
+
+\begin{equation}
+  \lim _{n \rightarrow \infty} \frac{1}{n} \log \left(\begin{array}{c}n \\ \left\lfloor n p_{1}\right\rfloor\left\lfloor n p_{2}\right\rfloor \cdots\left\lfloor n p_{m-1}\right\rfloor\left(n-\sum_{i=1}^{m-1}\left\lfloor n p_{i}\right\rfloor\right)\end{array}\right) = -\sum_{i=1}^m p_i \log p_i
+\end{equation}
+
+where $\sum_{i=1}^m p_i = 1$.
+
+\end{enumerate}
+
+\item 
+\end{enumerate}
+  
+
+  
+\end{document}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
