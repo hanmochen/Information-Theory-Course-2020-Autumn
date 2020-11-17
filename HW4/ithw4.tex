@@ -123,7 +123,6 @@ So $f(x) = \exp^{-\mu -\lambda x^2}$, which is normal distribution and satisfies
 
 \end{enumerate}
 
-
 \item \begin{enumerate}
   \item To prove the following lemma, 
 
@@ -215,7 +214,80 @@ where $\sum_{i=1}^m p_i = 1$.
 
 \end{enumerate}
 
-\item 
+\item \begin{enumerate}
+  \item $\mathbb{E}_p[\mathrm{y}] = 0$ means that $p_0 = 1,p_1=p_2 = 0$. So $\mathcal{L}_0$ is just a single point $(1,0,0)$.
+  \begin{figure}[!htbp]
+    \centering
+    \includegraphics[width = 0.3\linewidth]{3-1.jpg}
+    \caption{$\mathcal{L}_0$}
+  \end{figure}
+
+  \item $\mathbb{E}_p[\mathrm{y}] = \frac{1}{2}$ means $\mathcal{L}_{\frac{1}{2}} = \left\{p = (p_0,p_1,p_2): p_0+p_1+p_2 = 1,p_1+2p_2 = \frac{1}{2}\right\}$ which is a line passing $(\frac{1}{2},\frac{1}{2},0)$ and $(\frac{3}{4},0,\frac{1}{4})$. 
+
+  \begin{figure}[!htbp]
+    \centering
+    \includegraphics[width = 0.3\linewidth]{3-2.jpg}
+    \caption{$\mathcal{L}_{\frac 1 2}$}
+  \end{figure}
+
+  \item The exponential family is $\mathcal{E}=\left\{\tilde{q}: \tilde{q}=q e^{s f(\mathrm{y})-\alpha(s)}\right\}$. Following Pythagoras's Identity, let $f(y) = y$ so $\mathcal{E}$ is orthogonal to $\mathcal{L}_{\frac{1}{2}}$.  $\mathcal{E}=\left\{\tilde{q}: \tilde{q}=q e^{s \mathrm{y}-\alpha(s)}\right\}$. Denote $\lambda = e^s$, so $\tilde{q}_0 = \frac{1}{1+\lambda + 4\lambda^2},\tilde{q}_1 = \frac{\lambda}{1+\lambda + 4\lambda^2},\tilde{q}_2 = \frac{4\lambda^2}{1+\lambda + 4\lambda^2}$. Notice that $\mathcal{E}$ passes $(1,0,0)$ and $(0,0,1)$ and $\tilde{q}_1\leqslant \frac{1}{5}$.
+  
+
+  \begin{figure}[!htbp]
+    \centering
+    \includegraphics[width = 0.3\linewidth]{3-3.jpg}
+    \caption{$\mathcal{E}$}
+  \end{figure}
+
+  \item Using the Lagrange-Multiplier method we can induce that the I-projection $p^*$ of $q$ onto $\mathcal{L}_{\frac 1 2}$ belongs to $\mathcal{E}$. So $p^* \in \mathcal{L}_{\frac 1 2} \cap \mathcal{E}$.
+  
+  \begin{figure}[!htbp]
+    \centering
+    \includegraphics[width = 0.3\linewidth]{3-4.jpg}
+    \caption{$p^*$}
+  \end{figure}
+
+  By $\tilde{q}_1 + 2 \tilde{q}_2 = \frac{1}{2}$ we can solve $\lambda = \frac{1}{4}$, $p^* = (\frac{2}{3},\frac{1}{6},\frac{1}{6})$ 
+
+  \item As figure \ref{fig:3-5}
+  \begin{figure}[!htbp]
+    \centering
+    \includegraphics[width = 0.3\linewidth]{3-5.jpg}
+    \caption{$\mathcal{P}$}
+    \label{fig:3-5}
+  \end{figure}
+
+  \item First, for any $p \in \mathcal{P}$, it belongs to some $\mathcal{L}_{\gamma} = {p: \mathbb{E}_p[\mathrm{y}]= \gamma}$ and $\gamma \leqslant \frac{1}{2}$. So $D(p\|q) \geqslant D(p_{\gamma}^* \| q)$ where $p_{\gamma}^*$ is the I-projection of $q$ onto $\mathcal{L}_{\gamma}$. And $p_{\gamma}^* \in \mathcal{E}$. Thus,
+  
+  \begin{equation}
+    p^* = \argmin_{p\in \mathcal{P}} D(p\| q) = \argmin_{p\in \mathcal{P} \cap \mathcal{E}} D(p\| q)
+  \end{equation}
+  
+  For $\tilde{q}_s \in {\mathcal{P} \cap \mathcal{E}}$, $\gamma = \mathbb{E}_{\tilde{q}}[\mathrm{y}] = \tilde{q}_1 + 2 \tilde{q}_2 = \frac{\lambda+8\lambda^2}{1+\lambda+4\lambda^2}, \lambda = e^s$.
+
+  \begin{equation}
+    \frac{d\gamma}{d\lambda} = \frac{1+16\lambda+4\lambda^2}{(1+\lambda+4\lambda^2)^2} \geqslant 0
+  \end{equation}
+
+  So $\gamma$ strictly increases with $\lambda$, then $\gamma$ strictly increases with $s$, vice versa. And when $\gamma = \frac{1}{2}, \lambda = \frac{1}{4}, s = -\ln 4$
+
+  And $D(\tilde{q}_s \| q) = s \mathbb{E}_{\tilde{q}_s} [ y] - \alpha(s)$.
+
+  \begin{equation}
+    \frac{\partial D(\tilde{q}_s \| q)}{\partial s} = s \operatorname{Var}_{\tilde{q}_s} [y] \leqslant 0,\quad \text{for }  s\leqslant -\ln 4 <0
+  \end{equation}
+
+  So $\frac{\partial D(\tilde{q}_s \| q)}{\partial \gamma} \leqslant 0$ for $\gamma \leqslant \frac{1}{2}$. To minimize $D(\tilde{q}_s \| q)$, $\gamma^* = \frac{1}{2}, p^* = (\frac{2}{3},\frac{1}{6},\frac{1}{6})$
+
+  \begin{figure}[!htbp]
+    \centering
+    \includegraphics[width = 0.3\linewidth]{3-6.jpg}
+    \caption{$p^*$}
+    \label{fig:3-6å}
+  \end{figure}
+\end{enumerate}
+
+  
 \end{enumerate}
   
 

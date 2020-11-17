@@ -1,9 +1,9 @@
 # Fdb version 3
-["xdvipdfmx"] 1605579603 "ithw4.xdv" "ithw4.pdf" "ithw4" 1605579605
-  "ithw4.xdv" 1605579603 13828 2ec4358ee8ccf0da8752bef616a1e609 "xelatex"
+["xdvipdfmx"] 1605600818 "ithw4.xdv" "ithw4.pdf" "ithw4" 1605600820
+  "ithw4.xdv" 1605600818 20504 2c16359151c7c45bb2696ea1a5577f3b "xelatex"
   (generated)
   "ithw4.pdf"
-["xelatex"] 1605579601 "ithw4.tex" "ithw4.xdv" "ithw4" 1605579605
+["xelatex"] 1605600816 "ithw4.tex" "ithw4.xdv" "ithw4" 1605600820
   "/usr/local/texlive/2018/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/local/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm" 1480098698 1120 1e8878807317373affa7f7bba4cf2f6a ""
   "/usr/local/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy7.tfm" 1480098698 1120 7f9f170e8aa57527ad6c49feafd45d54 ""
@@ -94,9 +94,15 @@
   "/usr/local/texlive/2018/texmf-dist/web2c/texmf.cnf" 1544742277 35176 ce7fee66be1fb01dfc6b702a7dbfa0ea ""
   "/usr/local/texlive/2018/texmf-var/web2c/xetex/xelatex.fmt" 1553378829 3737826 3c9ee2198fc3e18a713a1b12e057fce6 ""
   "/usr/local/texlive/2018/texmf.cnf" 1523934483 577 0b39adfd7c93507ff20c9c14c2f1a33f ""
+  "3-1.jpg" 1605592239 109528 ee5614ea81c62d13d6e6c6b5b8c6cc9b ""
+  "3-2.jpg" 1605592834 172674 8bed1630e27d1ed1fd4af0f56fc2e513 ""
+  "3-3.jpg" 1605596856 111480 99a7a454105294ad7145cff9daef6df9 ""
+  "3-4.jpg" 1605597947 236110 4223aaee41033113a66bc270f9dd179d ""
+  "3-5.jpg" 1605598949 162079 d62dedd4aa4da5df40db885e45020c88 ""
+  "3-6.jpg" 1605600729 255754 8db1f09adfe4f9c718604c7eb0d26dfe ""
   "itdef.tex" 1600094570 4501 7af1341a22ddc14e210d76bab50da7b3 ""
-  "ithw4.aux" 1605579603 8 a94a2480d3289e625eea47cd1b285758 ""
-  "ithw4.tex" 1605579600 7603 eb0bae74963ab9381d29565829b12328 ""
+  "ithw4.aux" 1605600818 865 fb74c4ea75b1475b299585a08724515f ""
+  "ithw4.tex" 1605600815 11288 2beaa5cb2f965d97c47e0024f8007bb0 ""
   (generated)
   "ithw4.aux"
   "ithw4.xdv"

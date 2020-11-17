@@ -153,4 +153,10 @@ INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/euler/eusm5.t
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/lm/ec-lmr7.tfm
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/lm/ec-lmr5.tfm
 OUTPUT ithw4.xdv
+INPUT 3-1.jpg
+INPUT 3-2.jpg
+INPUT 3-3.jpg
+INPUT 3-4.jpg
+INPUT 3-5.jpg
+INPUT 3-6.jpg
 INPUT ithw4.aux

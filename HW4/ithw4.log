@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.3.23)  17 NOV 2020 10:20
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.3.23)  17 NOV 2020 16:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -438,28 +438,42 @@ File: ueus.fd 2013/01/14 v3.01 Euler Script
 ) [1
 
 ]
-Overfull \hbox (33.64333pt too wide) detected at line 160
+Overfull \hbox (33.64333pt too wide) detected at line 159
 []\OT1/cmr/m/n/10 (6!) + [] [] \OML/cmm/m/it/10 i \OT1/cmr/m/n/10 + [] \OML/cmm/m/it/10 n < \OT1/cmr/m/n/10 7 [] 7 \OMS/cmsy/m/n/10 ^^@ \OT1/cmr/m/n/10 7 + \OML/cmm/m/it/10 n [] n \OT1/cmr/m/n/10 + \OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 7 [] 7 + [] \OML/cmm/m/it/10 n \OMS/cmsy/m/n/10 ^^@ \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 n \OMS/cmsy/m/n/10 ^^@ \OT1/cmr/m/n/10 7) = (\OML/cmm/m/it/10 n \OT1/cmr/m/n/10 + 1) [] \OML/cmm/m/it/10 n \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 n
  []
 
 [2]
-Overfull \hbox (33.5157pt too wide) detected at line 191
+Overfull \hbox (33.5157pt too wide) detected at line 190
 [] \OMS/cmsy/m/n/10 ^^@[] [] \U/msb/m/n/10 P\OT1/cmr/m/n/10 ([] [] \OML/cmm/m/it/10 X[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 p\OT1/cmr/m/n/10 ) = [] \OMS/cmsy/m/n/10 ^^@[] [] [] \OT1/cmr/m/n/10 = 1 \OMS/cmsy/m/n/10 ^^@ [] [] [] []
  []
 
 
-Overfull \hbox (35.2801pt too wide) detected at line 212
+Overfull \hbox (35.2801pt too wide) detected at line 211
 [] [] [] [] \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 ^^@ [] \OML/cmm/m/it/10 p[] [] p[]
  []
 
-[3] [4] (./ithw4.aux) ) 
+[3]
+File: 3-1.jpg Graphic file (type bmp)
+<3-1.jpg>
+File: 3-2.jpg Graphic file (type bmp)
+<3-2.jpg>
+File: 3-3.jpg Graphic file (type bmp)
+<3-3.jpg>
+File: 3-4.jpg Graphic file (type bmp)
+<3-4.jpg>
+File: 3-5.jpg Graphic file (type bmp)
+<3-5.jpg>
+ [4] [5]
+File: 3-6.jpg Graphic file (type bmp)
+<3-6.jpg>
+ [6] (./ithw4.aux) ) 
 Here is how much of TeX's memory you used:
- 7606 strings out of 492933
- 111130 string characters out of 6133145
+ 7637 strings out of 492933
+ 111458 string characters out of 6133145
  210674 words of memory out of 5000000
- 11510 multiletter control sequences out of 15000+600000
+ 11533 multiletter control sequences out of 15000+600000
  31402 words of font info for 44 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 59i,13n,118p,819b,407s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 59i,13n,118p,819b,613s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on ithw4.xdv (4 pages, 13828 bytes).
+Output written on ithw4.xdv (6 pages, 20504 bytes).
