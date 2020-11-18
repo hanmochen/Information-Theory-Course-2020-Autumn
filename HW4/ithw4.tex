@@ -369,9 +369,141 @@ where $\sum_{i=1}^m p_i = 1$.
   \item Because $\mathcal{P}_{\varepsilon}$ is a linear family, the I-projection $p_{\epsilon}^*$ belongs to a exponential family $\mathcal{E} = \{\tilde{q} = qe^{sf(y) - \alpha(s)}\}$. And because $f(y) = \mathbf{1}(\mathrm{y} \geqslant M)$. So $\tilde{q}_i  =  e^{-\alpha(s)} q_i, i =0,1,\cdots,M-1$ and $\tilde{q}_i  =  e^{s-\alpha(s)} q_i, i =M,\cdots$. Comparing with the result in (4), the corresponding parameter \begin{equation}
     s^* = \log \frac{\varepsilon Q(M-1)}{(1-\varepsilon)(1-Q(M-1))}
   \end{equation}
-  
+
 \end{enumerate}
 
+
+\item \begin{enumerate}
+  \item \begin{equation}
+    K_{\mathrm{x}} = \operatorname{cov}(\underline{\mathrm{x}}) = \mathbb{E}\left[\left(\underline{\mathrm{x}} - \mathbb{E}[\underline{\mathrm{x}}]\right) \left(\underline{\mathrm{x}} - \mathbb{E}[\underline{\mathrm{x}}]\right)^T\right] = \mathbb{E}\left[\underline{\mathrm{x}}\underline{\mathrm{x}}^T\right]
+  \end{equation}
+
+  And $\mathbb{E}[\mathrm{x}_1^2] = \mathbb{E}[\mathrm{x}_2^2] = \sigma^2, \mathbb{E}[\mathrm{x}_1\mathrm{x_2}] = \rho_{\mathrm{x}} \sigma^2$, so
+
+  \begin{equation}
+    K_{\mathrm{x}} = \sigma^2  \begin{bmatrix}
+       1 & \rho_{\mathrm{x}}\\ \rho_{\mathrm{x}} & 1
+    \end{bmatrix}
+  \end{equation}
+
+  Because $\underline{\mathrm{y}} = A \underline{\mathrm{x}}$
+  \begin{equation}
+    K_{\mathrm{y}} = \operatorname{cov}(\underline{\mathrm{y}}) = \mathbb{E}\left[\left(\underline{\mathrm{y}} - \mathbb{E}[\underline{\mathrm{y}}]\right) \left(\underline{\mathrm{y}} - \mathbb{E}[\underline{\mathrm{y}}]\right)^T\right] = A K_{\mathrm{x}} A^T = \sigma^2  \begin{bmatrix}
+      1-\rho_{\mathrm{x}}^2 & 0\\ 0 & 1 \end{bmatrix}
+  \end{equation}
+
+  \item First we prove that for joint Gaussian distribution $(X,Y)$, if $\rho(X,Y)= 0$ then $x,y$ are independent. Because
+  \begin{equation}
+    \begin{aligned}
+      f(x, y)= & \frac{1}{2 \pi \sigma_{1} \sigma_{2} \sqrt{1-\rho^{2}}}  \times \\
+      & \exp \left[-\frac{1}{2\left(1-\rho^{2}\right)}\left(\frac{\left(x-\mu_{1}\right)^{2}}{\sigma_{1}^{2}}-\frac{2 \rho\left(x-\mu_{1}\right)\left(y-\mu_{2}\right)}{\sigma_{1} \sigma_{2}}+\frac{\left(y-\mu_{2}\right)^{2}}{\sigma_{2}^{2}}\right)\right]
+    \end{aligned}
+  \end{equation}
+  
+  Let $\rho = 0$ we have,
+
+  \begin{equation}
+    \begin{aligned}
+      f(x, y) & = \frac{1}{\sqrt{2\pi\sigma_1^2}} e^{-\frac{(x-\mu_1)^2}{2\sigma_1^2}} \times \frac{1}{\sqrt{2\pi\sigma_2^2}} e^{-\frac{(y-\mu_2)^2}{2\sigma_2^2}} \\
+      & = f(x)f(y)
+    \end{aligned}
+  \end{equation}
+
+  So if $\rho(x,y) = 0$, $x,y$ are independent. Using this conclusion, $y_1,y_2$ are independent. Using the conclusion from Homework 1, $\forall f,g$, $\rho(f(\mathrm{y}_1),g(\mathrm{y}_2)) = 0$. So  $\rho(\mathrm{y}_1,g(\mathrm{y}_2)) = 0$
+
+  \item $\mathrm{y_1} = \mathrm{x}_1 - \rho_{\mathrm{x}}\mathrm{x}_2,\mathrm{y_2} = \mathrm{x}_2$. So $\mathbb{E}\left[\left(\mathrm{x}_{1}-\rho_{\mathrm{x}} \mathrm{x}_{2}\right)^{2}\right] \leqslant \mathbb{E}\left[\left(\mathrm{x}_{1}-g\left(\mathrm{x}_{2}\right)\right)^{2}\right]$ is equivalent to \begin{equation}
+    \mathbb{E}\left[\mathrm{y}_1^2\right] \leqslant \mathbb{E}\left[\left(\mathrm{y}_{1}-g\left(\mathrm{y}_{2}\right)\right)^{2}\right] \quad \left( g'(\mathrm{y}_2) =  g(\mathrm{y}_2) - \rho_{\mathrm{x}}\mathrm{y}_2\right)
+  \end{equation}
+
+  Because $\rho(\mathrm{y}_1,g(\mathrm{y}_2)) = 0$, $\mathbb{E}\left[\mathrm{y}_{1}g(\mathrm{y}_{2})\right] = \mathbb{E}\left[\mathrm{y}_{1}\right] \mathbb{E}\left[g(\mathrm{y}_2)\right]$
+
+  \begin{equation}
+    \begin{aligned}
+      \mathbb{E}\left[\left(\mathrm{y}_{1}-g\left(\mathrm{y}_{2}\right)\right)^{2}\right] & =   \mathbb{E}\left[\mathrm{y}_{1}^2\right] + \mathbb{E}\left[g(\mathrm{y}_{2})^{2}\right] - 2 \mathbb{E}\left[\mathrm{y}_{1}g(\mathrm{y}_{2})\right] \\
+      & = \mathbb{E}\left[\mathrm{y}_{1}^2\right] + \mathbb{E}\left[g(\mathrm{y}_{2})^{2}\right] \geqslant \mathbb{E}\left[\mathrm{y}_1^2\right]
+    \end{aligned}
+  \end{equation}
+\end{enumerate}
+
+\item \begin{enumerate}
+  \item \begin{enumerate}
+    \item Because \begin{equation}
+      \begin{aligned}
+        \mathbb{E}\left[(\mathrm{y}-
+        \alpha)^2\right]  &= \alpha^2  -2 \alpha \mathbb{E}[\mathrm{y}] +  \mathbb{E}[\mathrm{y}^2]  \\
+        & = (\alpha-\mathbb{E}[\mathrm{y}])^2 +  \mathbb{E}[\mathrm{y}^2] - \left(\mathbb{E}[\mathrm{y}]\right)^2
+      \end{aligned}
+    \end{equation}
+
+    Thus,
+
+    \begin{equation}
+      \mathbb{E}[\mathrm{y}]=\underset{\alpha \in \mathbb{R}}{\arg \min } \mathbb{E}\left[(\mathrm{y}-\alpha)^{2}\right]
+    \end{equation}
+
+    \item As we can see, when $\alpha = \mathbb{E}[\mathrm{y}]$, the corresponding MSE is
+    
+    \begin{equation}
+      \mathbb{E}[\mathrm{y}^2] - \left(\mathbb{E}[\mathrm{y}]\right)^2 = \operatorname{var}(\mathrm{y}) =  \min_{\alpha \in \mathbb{R}} \mathbb{E}\left[(\mathrm{y}-\alpha)^{2}\right]
+    \end{equation}
+  \end{enumerate}
+
+  \item \begin{enumerate}
+    \item To minimize $\mathbb{E}\left[(\mathrm{y}-
+    f(\mathrm{x}))^2\right]$, we can minimize $\mathbb{E}\left[(\mathrm{y}-
+    f(\mathrm{x}))^2 | \mathrm{x} = x\right]$ for every $x$. Since $f(\mathrm{x})$ is a constant given $\mathrm{x} = x$. \begin{equation}
+      \begin{aligned}
+      \mathbb{E}\left[(\mathrm{y}-
+    f(\mathrm{x}))^2 | \mathrm{x}  = x\right] & = (f(x))^2 - 2f(x) \mathbb{E}\left[\mathrm{y}|x\right]  + \mathbb{E}\left[\mathrm{y}^2|x\right] \\
+    & = (f(x)- \mathbb{E}\left[\mathrm{y}|x\right])^2 +  \mathbb{E}\left[\mathrm{y}^2|x\right] - (\mathbb{E}\left[\mathrm{y}|x\right])^2 \\
+    & = (f(x)- \mathbb{E}\left[\mathrm{y}|x\right])^2 + \operatorname{var}(\mathrm{y} | x)
+      \end{aligned}
+    \end{equation}
+    Thus,
+
+    \begin{equation}
+      \mathbb{E}[\mathrm{y} \mid \mathrm{x}]=\underset{f:\mathcal{X} \to \mathbb{R}}{\arg \min } \mathbb{E}\left[(\mathrm{y}-f(\mathrm{x}))^{2}\right]
+    \end{equation}
+
+  \item For every $x$, the standard error is $\operatorname{var}(\mathrm{y}|x)$, so the MSE is $\mathbb{E}[\operatorname{var}(\mathrm{y}|x)]$.
+  \end{enumerate}
+
+  \item If $\mathrm{x},\mathrm{y}$ are independent, $\operatorname{var}(\mathrm{y}) =\operatorname{var}(\mathrm{y}|\mathrm{x})$ so $\operatorname{var}(\mathrm{y}) = \mathbb{E}\left[\operatorname{var}(\mathrm{y}|\mathrm{x})\right]$.
+  
+  \begin{equation}
+    x \perp y \Longrightarrow \operatorname{MSE}(\mathbb{E}[y])=\operatorname{MSE}(\mathbb{E}[y \mid x])
+  \end{equation}
+
+  And Using the Law of Total Variance, 
+
+  \begin{equation}
+    \operatorname{var}(\mathrm{y}) = \mathbb{E}\left[\operatorname{var}(\mathrm{y}|\mathrm{x})\right] + \operatorname{var} (\mathbb{E}\left[\mathrm{y}|\mathrm{x}\right])
+  \end{equation}
+
+  $\operatorname{var} (\mathbb{E}\left[\mathrm{y}|\mathrm{x}\right]) = 0$, which means $\mathbb{E}\left[\mathrm{y}|\mathrm{x}\right]$ is a constant, so $\mathbb{E}\left[\mathrm{y}|\mathrm{x}\right] = \mathbb{E}\left[\mathbb{E}\left[\mathrm{y}|\mathrm{x}\right]\right] = \mathbb{E}[\mathrm{y}]$. So 
+
+
+  \begin{equation}
+    \begin{aligned}
+      \mathbb{E}\left[f(\mathrm{x}) \mathrm{y} \right] & = \mathbb{E}\left[\mathbb{E}\left[f(\mathrm{x}) \mathrm{y}  | \mathrm{x}\right]\right] \\
+      & = \mathbb{E}\left[f(\mathrm{x})\mathbb{E}\left[ \mathrm{y}  | \mathrm{x}\right]\right] \\
+      & = \mathbb{E}\left[f(\mathrm{x})\mathbb{E}\left[ \mathrm{y}\right]\right] \\
+      & = \mathbb{E}\left[f(\mathrm{x})\right] \mathbb{E}\left[ \mathrm{y}\right]
+    \end{aligned} 
+  \end{equation}
+  
+  So \begin{equation}
+    \operatorname{MSE}(\mathbb{E}[y])=\operatorname{MSE}(\mathbb{E}[y \mid x]) \Longrightarrow \forall f, \rho(f(\mathrm{x}),\mathrm{y}) = 0
+  \end{equation}
+
+  In general $\operatorname{var} (\mathbb{E}\left[\mathrm{y}|\mathrm{x}\right]) \geqslant 0$, so 
+  \begin{equation}
+    \begin{aligned}
+      \operatorname{MSE}(\mathbb{E}[y]) & = \operatorname{var}(\mathrm{y}) = \mathbb{E}\left[\operatorname{var}(\mathrm{y}|\mathrm{x})\right] + \operatorname{var} (\mathbb{E}\left[\mathrm{y}|\mathrm{x}\right])\\& \geqslant \mathbb{E}\left[\operatorname{var}(\mathrm{y}|\mathrm{x})\right]  = \operatorname{MSE}(\mathbb{E}[y \mid x])
+    \end{aligned}
+  \end{equation}
+
+\end{enumerate}
 \end{enumerate}
   
 

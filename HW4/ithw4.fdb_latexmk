@@ -1,9 +1,9 @@
 # Fdb version 3
-["xdvipdfmx"] 1605612927 "ithw4.xdv" "ithw4.pdf" "ithw4" 1605612928
-  "ithw4.xdv" 1605612927 26608 4dc0ae395af647256675106ce3c3b716 "xelatex"
+["xdvipdfmx"] 1605701359 "ithw4.xdv" "ithw4.pdf" "ithw4" 1605701531
+  "ithw4.xdv" 1605701359 35756 72d7569d326982133b374d214ac14e53 "xelatex"
   (generated)
   "ithw4.pdf"
-["xelatex"] 1605612924 "ithw4.tex" "ithw4.xdv" "ithw4" 1605612928
+["xelatex"] 1605701359 "ithw4.tex" "ithw4.xdv" "ithw4" 1605701531
   "/usr/local/texlive/2018/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/local/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm" 1480098698 1120 1e8878807317373affa7f7bba4cf2f6a ""
   "/usr/local/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy7.tfm" 1480098698 1120 7f9f170e8aa57527ad6c49feafd45d54 ""
@@ -101,9 +101,9 @@
   "3-5.jpg" 1605598949 162079 d62dedd4aa4da5df40db885e45020c88 ""
   "3-6.jpg" 1605600729 255754 8db1f09adfe4f9c718604c7eb0d26dfe ""
   "itdef.tex" 1600094570 4501 7af1341a22ddc14e210d76bab50da7b3 ""
-  "ithw4.aux" 1605612927 865 fb74c4ea75b1475b299585a08724515f ""
-  "ithw4.tex" 1605612924 14585 9e7ec94ef82233f98584ed99e546b2f7 ""
+  "ithw4.aux" 1605701359 865 fb74c4ea75b1475b299585a08724515f ""
+  "ithw4.tex" 1605701528 22163 3f66b596fa6d883c32ff5e27d94593cf ""
   (generated)
   "ithw4.log"
-  "ithw4.xdv"
   "ithw4.aux"
+  "ithw4.xdv"
