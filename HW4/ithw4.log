@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.3.23)  18 NOV 2020 20:09
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.3.23)  19 NOV 2020 00:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -476,7 +476,12 @@ Overfull \hbox (39.12515pt too wide) detected at line 401
 [][]
  []
 
-[8] [9] [10] (./ithw4.aux) ) 
+[8] [9]
+Overfull \hbox (11.35066pt too wide) detected at line 537
+[][]
+ []
+
+[10] [11] (./ithw4.aux) ) 
 Here is how much of TeX's memory you used:
  7637 strings out of 492933
  111458 string characters out of 6133145
@@ -486,4 +491,4 @@ Here is how much of TeX's memory you used:
  1348 hyphenation exceptions out of 8191
  59i,13n,118p,819b,613s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on ithw4.xdv (10 pages, 35756 bytes).
+Output written on ithw4.xdv (11 pages, 44368 bytes).

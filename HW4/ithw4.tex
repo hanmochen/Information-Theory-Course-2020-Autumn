@@ -504,6 +504,95 @@ where $\sum_{i=1}^m p_i = 1$.
   \end{equation}
 
 \end{enumerate}
+
+\item \begin{enumerate}
+  \item $\|\underline{\mathrm{y}} - \underline{\alpha}\|_2^2 = (\underline{\mathrm{y}} - \underline{\alpha})^T (\underline{\mathrm{y}} - \underline{\alpha}) = \underline{\mathrm{y}}^T\underline{\mathrm{y}} - 2\underline{\alpha}^T \underline{\mathrm{y}}+ \underline{\alpha}^T \underline{\alpha}$
+  \begin{equation}
+    \begin{aligned}
+      \mathbb{E}\left[\|\underline{\mathrm{y}} - \underline{\alpha}\|_2^2\right] & = \mathbb{E}\left[\underline{\mathrm{y}}^T\underline{\mathrm{y}}\right] - 2\underline{\alpha}^T \mathbb{E}[\underline{\mathrm{y}}]+ \underline{\alpha}^T \underline{\alpha} \\
+      & = (\underline{\alpha} -\mathbb{E}[\underline{\mathrm{y}}])^T(\underline{\alpha} -\mathbb{E}[\underline{\mathrm{y}}]) + \mathbb{E}\left[\underline{\mathrm{y}}^T\underline{\mathrm{y}}\right] - \mathbb{E}[\underline{\mathrm{y}}]^T \mathbb{E}[\underline{\mathrm{y}}]
+    \end{aligned}
+  \end{equation}
+
+  So when $\alpha = \mathbb{E}[\underline{\mathrm{y}}] = \underline{P}_{\mathrm{y}}(\cdot)$, $ \min\limits_{\underline{\alpha}\in \mathbb{R}^k } \mathbb{E}\left[\|\underline{\mathrm{y}} - \underline{\alpha}\|_2^2\right] = \operatorname{cov}(\underline{\mathrm{y}})$.
+
+  \item To minimize $\mathbb{E}\left[\|\underline{\mathrm{y}} - \underline{f}(\mathrm{x})\|_2^2\right]$, we can minimize $\mathbb{E}\left[\|\underline{\mathrm{y}} - \underline{f}(\mathrm{x})\|_2^2 \mid \mathrm{x}\right]$ for every ${\mathrm{x}}$. And because $\underline{f}(\mathrm{x})$ is a constant vector given ${\mathrm{x}}$, using the conclusion from (a), 
+  
+  \begin{equation}
+    \mathbb{E}\left[\underline{\mathrm{y}} | {\mathrm{x}}\right] = \argmin_{\underline{f}(\mathrm{x}) \in  \mathbb{R}^k} \mathbb{E}\left[\|\underline{\mathrm{y}} - f(\underline{\mathrm{x}})\|_2^2 \mid \mathrm{x}\right], \forall x 
+  \end{equation}
+
+  Thus:
+
+  \begin{equation}
+    \underline{P}_{\mathrm{y} | \mathrm{x}} (\cdot | \mathrm{x}) = \mathbb{E}\left[\underline{\mathrm{y}} | {\mathrm{x}}\right] = \argmin_{\underline{f}:\mathcal{X} \to \mathbb{R}^k} \mathbb{E}\left[\|\underline{\mathrm{y}} - \underline{f}(\mathrm{x})\|_2^2 \right]
+  \end{equation}
+\end{enumerate}
+
+\item Suppose $r,\sigma^2$ is known, denote $\underline{\mathrm{x}} = (\mathrm{x}[0],\mathrm{x}[1],\cdots,\mathrm{x}[N-1])^T$, 
+\begin{equation}
+  \begin{aligned}
+    p(\underline{\mathrm{x}};a) = \frac{1}{(2\pi \sigma^2)^{\frac{N}{2}}} \prod_{n=0}^{N-1} e^{-\frac{(\mathrm{x}[n]-ar^n)^2}{2\sigma^2}} = \frac{1}{(2\pi \sigma^2)^{\frac{N}{2}}}  \exp\left( - \sum_{n=0}^{N-1} \frac{(\mathrm{x}[n]-ar^n)^2}{2\sigma^2} \right)
+  \end{aligned}
+\end{equation}
+
+And 
+
+\begin{equation}
+  \ln p(\underline{\mathrm{x}};a) = -\frac{N}{2} \ln 2\pi \sigma^2 - \frac{1}{2\sigma^2} \sum_{n=0}^{N-1} {(\mathrm{x}[n]-ar^n)^2}
+\end{equation}
+
+\begin{equation}
+  \frac{\partial \ln p(\underline{\mathrm{x}};a)}{ \partial a} = -\frac{1}{\sigma^2} \sum_{n=0}^{N-1} r^n(ar^n - \mathrm{x}[n])
+\end{equation}
+
+And the Fisher Information is 
+
+\begin{equation}
+  I(\theta) = \mathbb{E} \left[\left(\frac{\partial\ln p(x;\theta)}{\partial \theta}\right)^2 \right]
+\end{equation}
+
+And it satisfies the regularity condition $\mathbb{E} \left[\frac{\partial\ln p(x;\theta)}{\partial \theta} \right] = 0$, so the fisher information can be also expressed as,
+
+\begin{equation}
+  I(\theta) = -\mathbb{E} \left[\frac{\partial ^2\ln p(x;\theta)}{\partial \theta^2} \right]
+\end{equation}
+
+And \begin{equation}
+  \frac{\partial^2 \ln p(\underline{\mathrm{x}};a)}{ \partial a^2} = -\frac{1}{\sigma^2} \sum_{n=0}^{N-1} r^{2n} = - \frac{1-r^{2N}}{ \sigma^2 (1-r^2)}
+\end{equation}
+
+
+So \begin{equation}
+  I(a) = \frac{1-r^{2N}}{\sigma^2 (1-r^2)}
+\end{equation}
+
+If an efficient estimator exists, then the Maximum Likelihood estimator is the efficient estimator. Let $ \frac{\partial \ln p(\underline{\mathrm{x}};a)}{ \partial a} = 0$,
+
+\begin{equation}
+  \hat a= \frac{(1-r^2)}{(1-r^{2N})} \sum_{n=0}^{N-1} r^n \mathrm{x}[n]
+\end{equation}
+
+First,
+\begin{equation}
+  \mathbb{E}[\hat a ] = \frac{(1-r^2)}{(1-r^{2N})} \sum_{n=0}^{N-1} r^n a r^n = a
+\end{equation}
+
+So $\hat a$ is an unbiased estimator. And 
+
+\begin{equation}
+  \begin{aligned}
+    \operatorname{var}(\hat a) &  = \mathbb{E}[(\hat a -a)^2] = \mathbb{E}[\hat{a}^2] - a^2 \\
+  & = \left(\frac{1-r^2}{1-r^{2N}}\right)^2 \mathbb{E} \left[\left(\sum_{n=0}^{N-1} r^n \mathrm{x}[n] \right)^2\right] -a^2 \\
+  & = \left(\frac{1-r^2}{1-r^{2N}}\right)^2 \sum_{n=0}^{N-1} r^{2n} \sigma^2  + \left(\frac{1-r^2}{1-r^{2N}}\right)^2 \left(\mathbb{E} \left[\sum_{n=0}^{N-1} r^n \mathrm{x}[n] \right]\right)^2 - a^2 \\ 
+  & \quad (\text{Because} \operatorname{cov}(x_i,x_j) = 0,i\neq j,  \text{ and } \operatorname{cov}(x_n,x_n) = \operatorname{var}(x_n) = \sigma^2)\\
+  & = \left(\frac{1-r^2}{1-r^{2N}}\right) \sigma^2 + \left(\frac{1-r^2}{1-r^{2N}}\right)^2  \left(\frac{1-r^{2N}}{1-r^{2}}\right)^2 a^2 - a^2 \\
+  & = \left(\frac{1-r^2}{1-r^{2N}}\right) \sigma^2 \\
+  & = \frac{1}{I(a)}
+  \end{aligned}
+\end{equation}
+
+So $\hat a= \frac{(1-r^2)}{(1-r^{2N})} \sum_{n=0}^{N-1} r^n \mathrm{x}[n]$ is an efficient estimator of $a$.
 \end{enumerate}
   
 
