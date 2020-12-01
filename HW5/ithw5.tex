@@ -1,0 +1,361 @@
+% Homework template for Information Theory and Statistical Learning
+% by Xiangxiang Xu <xiangxiangxu.thu@gmail.com>
+% LAST UPDATE: Oct 3, 2019
+\documentclass[a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amssymb, amsthm}
+% amsmath: equation*, amssymb: mathbb, amsthm: proof
+\usepackage{moreenum}
+\usepackage{mathtools}
+\usepackage{url}
+\usepackage{enumitem}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{booktabs} % toprule
+\usepackage[mathcal]{eucal}
+\usepackage{dsfont}
+\usepackage[numbered,framed]{matlab-prettifier}
+\input{itdef}
+
+\lstset{
+  style              = Matlab-editor,
+  captionpos         =b,
+  basicstyle         = \mlttfamily,
+  escapechar         = ",
+  mlshowsectionrules = true,
+}
+\begin{document}
+\courseheader
+
+
+
+\newcounter{hwcnt}
+\setcounter{hwcnt}{5} % set to the times of Homework
+
+\begin{center}
+  \underline{\bf Homework \thehwcnt} \\
+\end{center}
+\begin{flushleft}
+  \textcolor{gray}{HANMO CHEN}\hfill
+  \today
+\end{flushleft}
+\hrule
+
+\vspace{2em}
+\setlist[enumerate,1]{label=\thehwcnt.\arabic*.}
+\setlist[enumerate,2]{label=(\alph*)}
+\setlist[enumerate,3]{label=\roman*.}
+\setlist[enumerate,4]{label=\greek*)}
+
+
+\newcommand{\EX}{\mathbb{E}}
+\newcommand{\x}{\mathsf{x}}
+\newcommand{\y}{\mathsf{y}}
+
+\flushleft
+\rule{\textwidth}{1pt}
+\begin{itemize}
+\item {\bf Acknowledgments: \/} 
+  \textcolor{gray}{For Problem 1.2(b), I refer to some answer on StackExchange \small{\url{https://math.stackexchange.com/a/108303}}}
+  % \textcolor{gray}{This template takes some materials from course CSE 547/Stat 548 of Washington University: \small{\url{https://courses.cs.washington.edu/courses/cse547/17sp/index.html}}.}
+
+  % \textcolor{red}{If you refer to other materials in your homework, please list here.}
+\item {\bf Collaborators: \/}
+  \textcolor{gray}{I finish this homework all by myself.} 
+% \textcolor{red}{If you finish your homework all by yourself, make a similar statement. If you get help from others in finishing your homework, state like this:}
+%   \textcolor{gray}{
+%   \begin{itemize}
+%   \item 1.2 (b) was solved with the help from \underline{\hspace{3em}}.
+%   \item Discussion with \underline{\hspace{3em}} helped me finishing 1.3.
+%   \end{itemize}
+% }
+\item  \emph{I certify that all solutions are entirely in my words and that I have not looked at another student's solutions. I have credited all external sources in this write up.}
+
+
+  \framebox[\linewidth]{\rule{0pt}{10pt}\textcolor{gray}{\large Hanmo Chen}}
+\end{itemize}
+\rule{\textwidth}{1pt}
+
+
+\vspace{2em}
+
+% You may use \texttt{enumerate} to generate answers for each question:
+
+\begin{enumerate}
+  \setlength{\itemsep}{3\parskip}
+
+    \item \textit{Cramer-Rao inequality with a bias term.}
+    
+    \begin{proof}
+
+        The bias $b(x) = \E\left[\hat{x}(\y)\right] -x = \int_{\mathbb{R}} \hat{x}(y) f(y;x)dy - x$. So $b'(x) =  \int_{\mathbb{R}} \hat{x}(y) \frac{\partial f(y;x)}{\partial x }dy -1 $
+
+        Notice that 
+
+        \begin{equation}
+          \begin{aligned}
+            \E\left[(\hat{x}(\y)-x)^2\right] - b^2(x) & = \E\left[(\hat{x}(\y)-x)^2\right] - \left(\E\left[\hat{x}(\y)-x\right]\right)^2 \\ &= \var(\hat{x}(\y)-x) = \var(\hat{x}(\y))
+          \end{aligned}
+        \end{equation}
+
+        So the origincal inequality is equivalent to the following one,
+
+        \begin{equation}
+          \var(\hat{x}(\y)) \geqslant \frac{[1+b'(x)]^2}{J_{\y}(x)}
+        \end{equation}
+
+        where $J_{\y}(x) = \E \left[\left( \frac{\partial}{\partial x} \ln f(y;x)\right)^2\right] $.
+
+          \begin{equation}
+            \begin{aligned}
+              1+b'(x) = \int_{\mathbb{R}} \hat{x}(y) \frac{\partial f(y;x)}{\partial x } dy= \int_{\mathbb{R}} \hat{x}(y) \frac{\frac{\partial f(y;x)}{\partial x }}{ f(y;x)} f(y;x) dy
+            \end{aligned}
+          \end{equation}
+
+          Notice that 
+
+          \begin{equation}
+            \frac{\partial}{\partial x} \ln f(y;x) =  \frac{\frac{\partial f(y;x)}{\partial x }}{ f(y;x)}
+          \end{equation}
+
+          So 
+
+          \begin{equation}
+            1+b'(x) = \E\left[\hat{x}(y) \frac{\partial}{\partial x} \ln f(y;x) \right]
+          \end{equation}
+
+          And according to the regularity condition,
+
+          \begin{equation}
+            \E\left[\frac{\partial}{\partial x} \ln f(y;x)\right] = 0
+          \end{equation}
+
+          Thus,
+          \begin{equation}
+            1+b'(x) = \E\left[\left(\hat{x}(y)-\E[\hat{x}(y)]\right) \frac{\partial}{\partial x} \ln f(y;x) \right]
+          \end{equation}
+
+          Using the Cauchy-Schwarz inequality,
+
+          \begin{equation}
+            \begin{aligned}
+              (1+b'(x))^2 & = \left(\E\left[\left(\hat{x}(y)-\E[\hat{x}(y)]\right) \frac{\partial}{\partial x} \ln f(y;x) \right]\right)^2 \\
+              & \leqslant \E\left[\left(\hat{x}(y)-\E[\hat{x}(y)]\right)^2\right] \E\left[\left(\frac{\partial}{\partial x} \ln f(y;x)\right)^2\right]
+            \end{aligned}
+          \end{equation}
+
+          that is,
+
+          \begin{equation}
+            \var(\hat{x}(y)) \geqslant \frac{[1+b'(x)]^2}{J_{\y}(x)}
+          \end{equation}
+
+      \end{proof}
+
+        
+  \item \begin{enumerate}
+    \item Suppose an unbiased estimator $f(y)$ for $x$ exists, so for all $x$ >0,
+    \begin{equation}
+      \int_{0}^{\frac{1}{x}} xf(y)dy = x \Longrightarrow \int_{0}^{\frac{1}{x}} f(y)dy = 1
+    \end{equation}
+    That is, $\forall a >0 $
+
+    \begin{equation}
+      \int_{0}^{a} f(y)dy = 1
+    \end{equation}
+
+    $\forall b>a>0$,
+
+    \begin{equation}
+      \int_{a}^{b} f(y)dy = 0 
+    \end{equation}
+
+    $f(y) = 0,\forall y >0$, which is not an unbiased estimator. So there is no unbiased estimator for $x$.
+
+    \item First we try to derive an unbiased estimator, $\forall x>0$
+    \begin{equation}
+      \int_{0}^{x} \frac{1}{x}f(y)dy = x \Longrightarrow \int_{0}^{x} f(y)dy = x^2
+    \end{equation}
+
+    Obviously $f(y) = 2y$ is an unbiased estimator. It is easy to show that $y$ is a complete sufficient statistics of $x$, so $\hat{x} (y) = 2y$ is a minimum-variance unbiased estimator for $x$.
+
+  \end{enumerate}
+
+  \item \begin{enumerate}
+    \item The distribution function is 
+    \begin{equation}
+      f(\uy;x) = \left\{\begin{aligned}
+        \frac{1}{2\pi}\exp\left({-\frac{(y_1-x)^2}{2}} - \frac{(y_2-x)^2}{2}\right), \quad x>0 \\
+        \frac{1}{2\sqrt{2}\pi }\exp\left({-\frac{(y_1-x)^2}{2}} - \frac{(y_2-x)^2}{4}\right), \quad x<0 
+      \end{aligned}\right.
+    \end{equation}
+
+    \begin{equation}
+      \frac{\partial \ln f(\uy;x)}{\partial x} = \left\{\begin{aligned}
+        y_1+y_2 -2x, \quad x>0 \\
+        y_1+\frac{y_2}{2} - \frac{3}{2} x, \quad x<0 
+      \end{aligned}\right.
+    \end{equation}
+    \begin{equation}
+      \begin{aligned}
+        J_{\urvy}(x) &= \E\left[\left(\frac{\partial \ln f(\uy;x)}{\partial x}\right)^2\right] = \left\{\begin{aligned}
+          2, \quad x>0 \\ 
+          \frac{3}{2},\quad x<0 
+        \end{aligned}\right.
+      \end{aligned}
+    \end{equation}
+  
+    \item Consider the following estimators,
+    \begin{equation}
+      \begin{aligned}
+        \hat{x}_1 (\urvy) = \frac{1}{2} \rvy_1 + \frac{1}{2} \rvy_2 \\
+      \hat{x}_2 (\urvy) = \frac{2}{3} \rvy_1 + \frac{1}{3} \rvy_2
+      \end{aligned}
+    \end{equation}
+  
+    It is easy to show that $\hat{x}_1 (\urvy),\hat{x}_2 (\urvy)$ are unbiased estimators, and 
+  
+    \begin{equation}
+      \begin{aligned}
+        \var(\hat{x}_1 (\urvy)) = \left\{\begin{aligned}
+          \frac{1}{2}, x>0 \\
+          \frac{1}{4}, x<0 
+        \end{aligned}\right. \\
+        \var(\hat{x}_2 (\urvy)) = \left\{\begin{aligned}
+          \frac{5}{9}, x>0 \\
+          \frac{2}{3}, x<0 
+        \end{aligned}\right.
+      \end{aligned}
+    \end{equation}
+  
+    For $x>0$, $\hat{x}_1 (\urvy)$ achieves the Cramer-Rao Lower Bound and $x<0$, $\hat{x}_2 (\urvy)$ achieves the Cramer-Rao Lower Bound. So there is no minimal-variance unbiased estimator for $x$.
+  
+  \end{enumerate}
+
+  \item \begin{enumerate}
+    \item \begin{equation}
+      P_{\urvy}(\uy;x) = x^{y_1+ y_2} (1-x)^{2-y_1-y_2} = (1-x)^2 (\frac{x}{1-x})^{t(\uy)} = a(t(\uy),x)b(x)
+    \end{equation}
+
+    So $t(\uy) = y_1+y_2$ is a sufficient statistics for $x$.
+
+    \item \begin{equation}
+      \MSE_{\hat{x}}(x) = \E \left[(x-\hat{x}(\uy))^2\right] = x(1-x)
+    \end{equation}
+
+    \item \begin{enumerate}
+      \item Because $t(\uy)$ is a sufficient statistics, $P_{\urvy}(\uy;x) = P_{\urvy|T}(\uy|t) P_{T}(t;x)$. So $P_{\urvy|T}(\uy|t)$ is independent of $x$. And $x'(t) = \E[\hat{x}(\urvy) | \rvt = t]$ does not depend on $x$.
+      \begin{equation}
+        x'(t) = \E[y_1| \rvt = t] = \left\{\begin{aligned}
+          0, t=0 \\ \frac{1}{2}, t= 1 \\ 1, t= 2
+        \end{aligned}\right.
+      \end{equation}
+      \item $x'(t) = \frac{1}{2} t = \frac{y_1+y_2}{2}$. \begin{equation}
+      \MSE_{\hat{x}'}(x) = \E \left[(x-\frac{y_1+y_2}{2})^2\right] = \frac{2}{2}x(1-x)
+    \end{equation}
+
+    So $MSE_{\hat{x}'}(x) =  \frac{1}{2} MSE_{\hat{x}}(x)$
+    \end{enumerate}
+
+    \item \begin{enumerate}
+      \item Because $t(\uy)$ is a sufficient statistics, $P_{\urvy}(\uy;x) = P_{\urvy|T}(\uy|t) P_{T}(t;x)$. So $P_{\urvy|T}(\uy|t)$ is independent of $x$. And $x'(t) = \E[\hat{x}(\uy) | \rvt = t]$ does not depend on $x$.
+      \item \textit{(Rao-Blackwell Theorem)} Because the cost function $C(x,\hat{x})$ is convex in $\hat{x}$, using Jensen's inequality, $\forall t$
+      \begin{equation}
+        C(x,\hat{x}'(t))  = C(x, \E[\hat{x}(\urvy) | \rvt = t]) \leqslant \E\left[C(x,\hat{x}(\urvy)) \mid  \rvt = t \right] 
+      \end{equation}
+
+      Take expections of $\rvt$ in the inequality above,
+
+      \begin{equation}
+        \E[C(x,\hat{x}'(\rvt))] \leqslant \E\left[C(x,\hat{x}(\urvy)) \right] 
+      \end{equation}
+    \end{enumerate}
+  \end{enumerate}
+
+  \item First we prove it is a sufficient statistics.
+  \begin{equation}
+    p_{\rvy}(y;x) = \frac{p_{\rvy}(y;H_0)}{p_{\rvy}(y;H_1)} \frac{p_{\rvy}(y;x)}{p_{\rvy}(y;H_0)} p_{\rvy}(y;H_1) = a(t(y),x)b(y)
+  \end{equation}
+
+  \begin{equation}
+    \begin{aligned}
+      &a(t(y),x) =  \frac{p_{\rvy}(y;H_0)}{p_{\rvy}(y;H_1)} \frac{p_{\rvy}(y;x)}{p_{\rvy}(y;H_0)} = \left\{\begin{aligned}
+        1,x=H_1 \\ t(y),x=H_0
+      \end{aligned}\right. \\ 
+      &b(y) = p_{\rvy}(y;H_1)
+    \end{aligned}
+  \end{equation}
+
+  So $t(y)$ is a sufficient statistics.
+
+  Notice that the distribution function belongs to an exponential family,
+
+  \begin{equation}
+    \begin{aligned}
+      p_{\rvy}(y;x) & = p_{\rvy}(y;H_1) \exp\left(\1(x=H_0) \log \frac{p_{\rvy}(y;H_0)}{p_{\rvy}(y;H_1)}\right) \\
+      & = h(y) \exp\left( w(x) t(y) \right)
+    \end{aligned}
+  \end{equation}
+
+  Thus $t(y)$ is a complete statistics.
+
+  So $t(y)$ is a complete sufficient statistics
+  
+  \item \begin{equation}
+    \hat{x}_{MAP}(y) = \argmax_{a} p_{\rvx|\rvy} (a|y) = \argmax_{a}  {p_{\rvx,\rvy} (a,y)} = \argmax_{a}  {p_{\rvy|\rvx} (y|a) p_{\rvx}(a)}
+  \end{equation}
+
+  Suppose $\rvz$ is the complete data,
+
+  \begin{equation}
+    L(x) = \log {p_{\rvy|\rvx} (y|x) p_{\rvx}(x)} = \log p_{\rvz}(z|x) - \log p_{\rvz | \rvy,\rvx} (z|y,x) + \log p_{\rvx}(x)
+  \end{equation}
+
+  Take expections of both sides over $p_{\rvz | \rvy,\rvx} (z|y,x')$
+
+  \begin{equation}
+    LHS =  \log {p_{\rvy|\rvx} (y|x) p_{\rvx}(x)} 
+  \end{equation}
+
+  \begin{equation}
+    \begin{aligned}
+      RHS = \sum_{z'} p_{\rvz | \rvy,\rvx} (z'|y,x') \log p_{\rvz}(z'|x) - \sum_{z'} p_{\rvz | \rvy,\rvx} (z'|y,x') \log p_{\rvz | \rvy,\rvx} (z'|y,x) + \log p_{\rvx}(x) 
+    \end{aligned}
+  \end{equation}
+
+  Denote $U(x,x') =  \sum_{z'} p_{\rvz | \rvy,\rvx} (z'|y,x') \log p_{\rvz}(z'|x)+ \log p_{\rvx}(x)$ and $V(x,x') = - \sum_{z'} p_{\rvz | \rvy,\rvx} (z'|y,x') \log p_{\rvz | \rvy,\rvx} (z'|y,x)$ so 
+
+  \begin{equation}
+    \log {p_{\rvy|\rvx} (y|x) p_{\rvx}(x)}  = U(x,x') + V(x,x')
+  \end{equation} 
+
+  By the same method in lecture, we have 
+
+  \begin{equation}
+    V(x,x') - V(x',x') = \sum_{z} p_{\rvz | \rvy,\rvx} (z|y,x') \log \frac{p_{\rvz | \rvy,\rvx} (z|y,x')}{p_{\rvz | \rvy,\rvx} (z|y,x)} = D(p_{\rvz | \rvy,\rvx'} \| p_{\rvz | \rvy,\rvx}) \geqslant 0
+  \end{equation}  
+
+  So if we want to find $L(x)  > L(x')$, we just need to make sure $U(x,x') > U(x',x')$.
+
+  The EM-MAP algorithm is as follows.
+
+  \begin{enumerate}
+    \item Initialize: choose $x^{(0)}$
+    \item Repeat until convergence:\begin{enumerate}
+      \item E-step: given previous $x^{(n)}$, compute \begin{equation}
+        U(x,x^{(n)}) = \E_{p_{\rvz|\rvy,\rvx}}\left[\log p_{\rvz}(z|x) \big| \rvy = y, \rvx  = x^{(n) }\right] + \log p_{\rvx}(x)
+      \end{equation}
+      \item M-step: determine $x^{(n+1)}$, \begin{equation}
+        x^{(n+1)} = \argmax_{x} U(x,x^{(n)})
+      \end{equation}
+    \end{enumerate}
+  \end{enumerate}
+
+  \end{enumerate}
+
+\end{document}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
