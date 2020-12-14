@@ -1,0 +1,257 @@
+% Homework template for Information Theory and Statistical Learning
+% by Xiangxiang Xu <xiangxiangxu.thu@gmail.com>
+% LAST UPDATE: Oct 3, 2019
+\documentclass[a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amssymb, amsthm}
+% amsmath: equation*, amssymb: mathbb, amsthm: proof
+\usepackage{moreenum}
+\usepackage{mathtools}
+\usepackage{url}
+\usepackage{enumitem}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{booktabs} % toprule
+\usepackage[mathcal]{eucal}
+\usepackage{dsfont}
+\usepackage[numbered,framed]{matlab-prettifier}
+\input{itdef}
+
+\lstset{
+  style              = Matlab-editor,
+  captionpos         =b,
+  basicstyle         = \mlttfamily,
+  escapechar         = ",
+  mlshowsectionrules = true,
+}
+\begin{document}
+\courseheader
+
+
+
+\newcounter{hwcnt}
+\setcounter{hwcnt}{6} % set to the times of Homework
+
+\begin{center}
+  \underline{\bf Homework \thehwcnt} \\
+\end{center}
+\begin{flushleft}
+  \textcolor{gray}{HANMO CHEN}\hfill
+  \today
+\end{flushleft}
+\hrule
+
+\vspace{2em}
+\setlist[enumerate,1]{label=\thehwcnt.\arabic*.}
+\setlist[enumerate,2]{label=(\alph*)}
+\setlist[enumerate,3]{label=\roman*.}
+\setlist[enumerate,4]{label=\greek*)}
+
+
+\newcommand{\rvs}{\mathsf{s}} 
+\newcommand{\rvr}{\mathsf{r}} 
+\newcommand{\bB}{\mathbf{B}}  
+\newcommand{\bg}{\boldsymbol{g}} 
+\newcommand{\Bf}{\boldsymbol{f}} 
+
+\flushleft
+\rule{\textwidth}{1pt}
+\begin{itemize}
+\item {\bf Acknowledgments: \/} 
+  \textcolor{gray}{For $L_2$-norm I refer to the wikipedia \url{https://en.wikipedia.org/wiki/Matrix_norm}. For 6.4, I refer to \url{https://ieeexplore.ieee.org/document/8849720}\footnote{ S. Huang, X. Xu, L. Zheng and G. W. Wornell, "An Information Theoretic Interpretation to Deep Neural Networks," 2019 IEEE International Symposium on Information Theory (ISIT), Paris, France, 2019, pp. 1984-1988, doi: 10.1109/ISIT.2019.8849720.}}
+  % \textcolor{gray}{This template takes some materials from course CSE 547/Stat 548 of Washington University: \small{\url{https://courses.cs.washington.edu/courses/cse547/17sp/index.html}}.}
+
+  % \textcolor{red}{If you refer to other materials in your homework, please list here.}
+\item {\bf Collaborators: \/}
+  \textcolor{gray}{I finish this homework all by myself.} 
+% \textcolor{red}{If you finish your homework all by yourself, make a similar statement. If you get help from others in finishing your homework, state like this:}
+%   \textcolor{gray}{
+%   \begin{itemize}
+%   \item 1.2 (b) was solved with the help from \underline{\hspace{3em}}.
+%   \item Discussion with \underline{\hspace{3em}} helped me finishing 1.3.
+%   \end{itemize}
+% }
+\item  \emph{I certify that all solutions are entirely in my words and that I have not looked at another student's solutions. I have credited all external sources in this write up.}
+
+
+  \framebox[\linewidth]{\rule{0pt}{10pt}\textcolor{gray}{\large Hanmo Chen}}
+\end{itemize}
+\rule{\textwidth}{1pt}
+
+
+\vspace{2em}
+
+% You may use \texttt{enumerate} to generate answers for each question:
+
+\begin{enumerate}
+  \setlength{\itemsep}{3\parskip}
+
+  \item \begin{enumerate}
+    \item \begin{equation}
+      p_{\rvy_1\rvy_2}(y_1,y_2;x) = 1, x\leqslant y_1,y_2 \leqslant x+1
+    \end{equation} 
+    And $p(\rvs=\max(\rvy_1,\rvy_2) \leqslant s)) = (s-x)^2, x \leqslant s \leqslant x+1$, so \begin{equation}
+      p_{\rvs}(s;x) = 2(s-x), x \leqslant s \leqslant x+1
+    \end{equation}
+    \begin{equation}
+      \begin{aligned}
+        \frac{p_{\rvy_1\rvy_2}(y_1,y_2;x)}{p_{\rvs}(s;x)} = \frac{1}{2(s-x)}, x \leqslant y_1,y_2,s \leqslant x+1
+      \end{aligned}
+    \end{equation}
+
+    So $\rvs$ is not a sufficient statistic for $p_{\rvy_1\rvy_2}(y_1,y_2;x)$.
+
+  \item $p_{\rvr}(r;x) = p_{\rvr}(-r;x) $ due to symmetry. Suppose $r\geqslant 0$, 
+   \begin{equation}
+    p_{\rvr} (r;x) = \int_{x}^{x+1} p_{\rvy_1}(y+r;x) p_{\rvy_2}(y;x) dy = 1-r
+  \end{equation}
+
+  So $p_{\rvr} (r;x) = 1-|r|$ does not depend on $x$, $\rvr$ is an ancillary statistic for $p_{\rvy_1\rvy_2}(y_1,y_2;x)$.
+
+  \item Yes. Because we can recover $\rvy_1,\rvy_2$, with $\rvs,\rvr$.
+  \begin{equation}
+    (\rvy_1,\rvy_2) = \left\{\begin{aligned}
+      (\rvs,\rvs-\rvr), \quad r \geqslant 0 \\
+      (\rvs+\rvr,\rvs), \quad r <0
+    \end{aligned}\right.
+  \end{equation}
+
+  So $\boldsymbol{\mathsf{u}} = [\rvs,\rvr]^T $ is a sufficient statistic for $p_{\rvy_1\rvy_2}(y_1,y_2;x)$ and 
+  \end{enumerate}
+
+  \item Let $\rvx=\rvy$ be randomly chosen from $\{0,1,2\}$ with equal probability $\frac{1}{3}$ and $\xi(\rvx)=\rvx,\eta(\rvy) = \rvy^2$. $\rho(\rvx,\rvy) =\rho(\rvx,\rvx) =1$. \begin{equation}
+    \rho(\xi(\rvx),\eta(\rvy)) = \rho(\rvx,\rvx^2) = \frac{\E[\rvx^3] - \E[\rvx^2]\E[\rvx]}{\sqrt{\var(\rvx)\var(\rvx^2)}} = \sqrt{\frac{12}{13}} \neq \rho(\rvx,\rvy)
+  \end{equation}
+
+  \item \begin{enumerate}
+    \item \begin{enumerate}
+      \item \begin{equation}
+        \begin{aligned}
+          \bpsi^T \bB \bphi & =  \sum_{x\in \cX,y \in \cY} g(y) \sqrt{P_{\rvy}(y) } \frac{P_{\rvx\rvy}(x,y)}{\sqrt{P_{\rvx}(x)P_{\rvy}(y)}} f(x) \sqrt{P_{\rvx}(x)} \\
+          & = \sum_{x\in \cX,y \in \cY} f(x) g(y) P_{\rvx\rvy}(x,y) \\
+          & = \E[f(x)g(y)]
+        \end{aligned}
+      \end{equation}
+      \item \begin{equation}
+        \begin{aligned}
+          \bB \bphi(y) & = \sum_{x\in \cX} \frac{P_{\rvx\rvy}(x,y)}{\sqrt{P_{\rvy}(y)}} f(x) \\
+          & =  \sqrt{P_{\rvy}(y)} \sum_{x\in \cX} P_{\rvx | \rvy}(x|y) f(x) \\
+          & = \sqrt{P_{\rvy}(y)} \E[f(\rvx) | y]
+        \end{aligned}
+      \end{equation}
+      So $\bB \bphi \leftrightarrow \E[f(\rvx) | \rvy]$
+      \item  \begin{equation}
+        \begin{aligned}
+          \bB^T \bpsi(x) & = \sum_{y\in \cY} \frac{P_{\rvx\rvy}(x,y)}{\sqrt{P_{\rvx}(x)}} g(y) \\
+          & =  \sqrt{P_{\rvx}(x)} \sum_{y\in \cY} P_{\rvy | \rvx}(y|x) g(y) \\
+          & = \sqrt{P_{\rvx}(x)} \E[g(\rvy) | x]
+        \end{aligned}
+      \end{equation}
+      So $\bB^T \bpsi \leftrightarrow \E[g(\rvy) | \rvx]$
+    \end{enumerate}
+
+    \item \begin{equation}
+      \bB \bphi_1(y) = \sum_{x\in \cX}\frac{P_{\rvx\rvy}(x,y)}{\sqrt{P_{\rvy}(y)}} = \sqrt{P_{\rvy}(y)} 
+    \end{equation}
+
+    \begin{equation}
+      \bB^T \bpsi_1(x) = \sum_{y\in \cY}\frac{P_{\rvx\rvy}(x,y)}{\sqrt{P_{\rvx}(x)}} = \sqrt{P_{\rvx}(x)} 
+    \end{equation}
+
+    So $\bB\bphi_1 = \bpsi_1, \bB^T\bpsi_1 = \bphi_1$. Its means that if we let $f(x)=g(y)=1$ in (a), we have $\E[1|\rvy] = \E[1|\rvx] = 1$
+
+    \item  The $L_2$-norm of $\bB$ is equivalent to 
+    \begin{equation}
+      \| \bB \|_2  = \sup \| \bB \bx \|_2, \st  \| \bx \|_2 = 1
+    \end{equation}
+
+    To maximize $\| \bB \bx \|_2$, every component in $\bx$ must $\geqslant 0 $. Thus for every $\bX \in \mathbb{R}^{|\cX|}$, there is a correspond distribution of $X \in \cX$. So $\bX$ can be expressed as 
+    
+    \begin{equation}
+      \bx = \left[\sqrt{P_{\rvx'}(1)},\sqrt{P_{\rvx'}(2)},\cdots,\sqrt{P_{\rvx'}(|\cX|)}\right]^T
+    \end{equation}
+
+    Thus 
+
+    \begin{equation}
+      \begin{aligned}
+        \| \bB \bx \|^2_2 & = \sum_{y \in \cY} \left(\sum_{x\in \cX} \frac{P_{\rvx\rvy}(x,y)}{\sqrt{P_{\rvx}(x)P_{\rvy}(y)}} \sqrt{P_{\rvx'}(x)} \right)^2  \\
+        & = \sum_{y \in \cY}P_{\rvy}(y)  \left(\sum_{x\in \cX} \frac{P_{\rvx|\rvy}(x|y)}{\sqrt{P_{\rvx}(x)}} \sqrt{P_{\rvx'}(x)} \right)^2 \\
+        & = \sum_{y \in \cY}P_{\rvy}(y)  \E^2\left[\frac{\sqrt{P_{\rvx'}(x)}}{\sqrt{P_{\rvx}(x)}} \big| y \right] \\
+        & \leqslant \sum_{y \in \cY}P_{\rvy}(y) \E\left[\frac{P_{\rvx'}(x)}{P_{\rvx}(x)} \big| y \right] = \E \left[\E\left[\frac{P_{\rvx'}(x)}{P_{\rvx}(x)} \big| y \right] \right] \\
+        & \quad = \E [\frac{P_{\rvx'}(x)}{P_{\rvx}(x)}] = 1
+      \end{aligned}
+    \end{equation}
+
+    And the "=" holds when $\bx = \bphi_1$.  So $\|\bB\|_2 = 1$
+  \end{enumerate}
+
+  \item \begin{enumerate}
+    \item The empirical mean $\frac{1}{n} \sum_{i=1}^n \log Q_{\rvy | \rvx} (y_i | x_i ) $ is the realization of expectation $ \E_{P_{\rvx\rvy}}[\log Q_{\rvy | \rvx}(x,y)]$. \begin{equation}
+      \begin{aligned}
+        (\bg^*,b^*) & = \argmax_{\bg,b} D(P_{\rvx\rvy}\| P_{\rvx}Q_{\rvy|\rvx} ) \\
+        & = \argmax_{\bg,b} \E_{P_{\rvx\rvy}} \left[ \log \frac{P_{\rvx\rvy}(x,y)}{P_{\rvx}(x)Q_{\rvy|\rvx}(y|x)}\right] \\
+        & = \argmin_{\bg,b} \E_{P_{\rvx\rvy}}[\log Q_{\rvy | \rvx}(y|x)] \\
+        & = \argmin_{\bg,b} \frac{1}{n} \sum_{i=1}^n \log Q_{\rvy | \rvx} (y_i | x_i )
+      \end{aligned}
+    \end{equation}
+
+    \item First, we will prove the fisrt order approximation of K-L divergence, i.e. if $P_1(x) -P_2(x) = O(\varepsilon) $,
+    
+    \begin{equation}
+      \begin{aligned}
+        D(P_1(x) \| P_2(x)) & = -\sum_{x \in \cX} P_1(x) \log \left(\frac{P_1(x) + P_2(x) -P_1(x)}{P_1(x)}\right) \\
+        & = - \sum_{x\in \cX} P_1(x) \left( \frac{P_2(x)-P_1(x)}{P_1(x)} -\frac{1}{2} \frac{(P_2(x)-P_1(x))^2}{(P_1(x))^2} + O(\epsilon^3)\right) \\ 
+        & \approx \frac{1}{2} \sum_{x\in \cX} \frac{(P_2(x)-P_1(x))^2}{P_1(x)} = \frac{1}{2} \sum_{x\in \cX} \frac{(P_2(x)-P_1(x))^2}{P_2(x)} \frac{P_2(x)}{P_1(x)}  \\
+        & = \frac{1}{2} \sum_{x\in \cX} \frac{(P_2(x)-P_1(x))^2}{P_2(x)}  ( 1- \frac{O(\epsilon)}{P_1(x)}) \\
+        & \approx \frac{1}{2} \sum_{x\in \cX} \frac{(P_2(x)-P_1(x))^2}{P_2(x)} 
+      \end{aligned}
+    \end{equation}
+
+    Then we just need to prove that $P_{\rvx\rvy}(x,y) - P_{\rvx}(x)Q_{\rvy|\rvx}(y) = O(\epsilon)$.
+
+    Because $\Bf^T(x) \bg^*(y) + d^*(y) = O(\varepsilon)$, 
+    \begin{equation}
+      P_{\rvy}(y) e^{\Bf^T(x) \bg^*(y) + d^*(y)} =  P_{\rvy}(y) (1+ \Bf^T(x) \bg^*(y) + d^*(y) + O(\varepsilon^2))
+    \end{equation}
+
+    \begin{equation}
+      \begin{aligned}
+        \sum_{y \in \cY}  P_{\rvy}(y) (1+ \Bf^T(x) \bg^*(y) + d^*(y) + O(\varepsilon^2)) = 1 + \E_{P_{\rvy}} [\Bf^T(x) \bg^*(y)] + \E_{P_{\rvy}} [d^*(y)]  + O(\varepsilon^2)
+      \end{aligned}
+    \end{equation}
+
+    Without loss of generality, we can assume $\E_{P_{\rvy}} [\bg^*(y)] = \E_{P_{\rvy}} [d^*(y)] = 0$.
+
+
+    \begin{equation}
+      \begin{aligned}
+        Q_{\rvy | \rvx}[(x,y)] & = \frac{P_{\rvy}(y) (1+ \Bf^T(x) \bg^*(y) + d^*(y) + O(\varepsilon^2))}{ \sum_{y' \in \cY}  P_{\rvy}(y') (1+ \Bf^T(x) \bg^*(y') + d^*(y') + O(\varepsilon^2))} \\
+        & = \frac{ P_{\rvy}(y) \left(1+ \Bf^T(x) \bg^*(y) + d^*(y) + O(\varepsilon^2)\right)}{1+ O(\varepsilon^2)} \\
+        & = P_{\rvy}(y) \left(1+ \Bf^T(x) \bg^*(y) + d^*(y) + O(\varepsilon^2)\right)(1-O(\varepsilon^2)) \\
+        & = P_{\rvy}(y) \left(1+ \Bf^T(x) \bg^*(y) + d^*(y)\right) + O(\varepsilon^2)
+      \end{aligned}
+    \end{equation}
+
+    Thus,
+
+    \begin{equation}
+      P_{\rvx\rvy}(x,y) - P_{\rvx}(x)Q_{\rvy|\rvx}(y) = P_{\rvx}(x) P_{\rvy}(y) + O(\varepsilon) -P_{\rvx}(x)P_{\rvy}(y)(1+O(\varepsilon))  = O(\varepsilon)
+    \end{equation}
+
+    So we have,
+
+    \begin{equation}
+      D(P_{\rvx\rvy}(x,y) \| P_{\rvx}(x)Q_{\rvy|\rvx}(y) ) \approx \frac{1}{2} \sum_{x\in \cX,y\in \cY} \frac{(P_{\rvx\rvy}(x,y) - P_{\rvx}(x)Q_{\rvy|\rvx}(y))^2}{P_{\rvx}(x)Q_{\rvy|\rvx}(y)}
+    \end{equation}
+  \end{enumerate}
+
+
+  \end{enumerate}
+
+\end{document}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
